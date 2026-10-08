@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${LOGO_WIDTH} 220" width="${LOGO_WIDTH}" height="220" role="img" aria-labelledby="dp-title">
+  <title id="dp-title">${ORG_TITLE} — ${DISPLAY_NAME} logo</title>
+  <!-- Scaffolded by tools/scaffold-assets.sh from assets/templates/logo.svg.tmpl. Safe to hand-tune.
+       Transparent background; wordmark adapts to light/dark via prefers-color-scheme.
+       tools/generate-assets.sh replaces the theme-override marker below to render the dark variant. -->
+  <style>
+    .dp-ink { fill: #0F172A; }
+    .dp-muted { fill: #475569; }
+    @media (prefers-color-scheme: dark) {
+      .dp-ink { fill: #F1F5F9; }
+      .dp-muted { fill: #94A3B8; }
+    }
+    /*@theme-override*/
+  </style>
+  <g transform="translate(-18.8 -43.6) scale(0.6)">
+${MARK_SVG}
+  </g>
+${LOGO_TEXT_SVG}
+</svg>

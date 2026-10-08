@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="dp-title">
+  <title id="dp-title">Dialectic Playground — docs icon</title>
+  <!-- Scaffolded by tools/scaffold-assets.sh from assets/templates/icon.svg.tmpl. Safe to hand-tune. -->
+  <defs>
+    <linearGradient id="dp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E1B4B"/>
+      <stop offset="1" stop-color="#0B1120"/>
+    </linearGradient>
+  </defs>
+  <rect class="dp-tile" width="512" height="512" rx="112" fill="url(#dp-bg)"/>
+  <g transform="translate(256 256) scale(0.9) translate(-256 -256)">
+<!-- dp-mark: the shared "core" mark. 512×512 design space, centered on (256,256).
+     thesis (sky ring) × antithesis (rose ring) → synthesis (accent lens) + per-repo glyph. -->
+<g class="dp-mark">
+  <defs>
+    <clipPath id="dp-thesis"><circle cx="200" cy="256" r="140"/></clipPath>
+    <clipPath id="dp-lower-crossing"><rect x="200" y="256" width="112" height="200"/></clipPath>
+  </defs>
+  <circle cx="200" cy="256" r="140" fill="#38BDF8" fill-opacity="0.16"/>
+  <circle cx="312" cy="256" r="140" fill="#FB7185" fill-opacity="0.16"/>
+  <circle cx="312" cy="256" r="140" fill="#E2E8F0" clip-path="url(#dp-thesis)"/>
+  <circle cx="200" cy="256" r="140" fill="none" stroke="#38BDF8" stroke-width="24"/>
+  <circle cx="312" cy="256" r="140" fill="none" stroke="#FB7185" stroke-width="24"/>
+  <!-- re-draw the thesis ring over the lower crossing so the rings interlock -->
+  <circle cx="200" cy="256" r="140" fill="none" stroke="#38BDF8" stroke-width="24" clip-path="url(#dp-lower-crossing)"/>
+  <g class="dp-glyph" transform="translate(256 256) scale(1.1)">
+    <!-- book: open book (documentation glyph) -->
+    <path d="M-46,-30 Q-25,-41 -4,-29 L-4,38 Q-25,27 -46,37 Z" fill="#1E1B4B"/>
+    <path d="M46,-30 Q25,-41 4,-29 L4,38 Q25,27 46,37 Z" fill="#1E1B4B"/>
+    <g fill="none" stroke="#E2E8F0" stroke-width="4" stroke-linecap="round">
+      <path d="M-38,-14 Q-25,-20 -12,-13 M-38,0 Q-25,-6 -12,1 M-38,14 Q-25,8 -12,15"/>
+      <path d="M38,-14 Q25,-20 12,-13 M38,0 Q25,-6 12,1 M38,14 Q25,8 12,15"/>
+    </g>
+  </g>
+</g>
+  </g>
+</svg>
