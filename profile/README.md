@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dialectic-playground/.github/main/assets/dialectic-playground/dist/logo-dark.svg">
+    <img alt="Dialectic Playground" src="https://raw.githubusercontent.com/dialectic-playground/.github/main/assets/dialectic-playground/dist/logo.svg" height="120">
+  </picture>
+</p>
+
 # Welcome to Dialectic Playground 🧪
 
 A polyglot workshop exploring language design, implementations, and shared tooling.
@@ -9,7 +16,7 @@ A polyglot workshop exploring language design, implementations, and shared tooli
 
 | Repository | Focus / Language | Status |
 | :--- | :--- | :--- |
-| [`documentation`](https://github.com/dialectic-playground/documentation) | Shared guides, specs, and cross-cutting notes | Active |
+| [`docs`](https://github.com/dialectic-playground/docs) | Shared guides, specs, and cross-cutting notes | Active |
 | [`py`](https://github.com/dialectic-playground/py) | Python implementation & scripts | Active |
 | [`rs`](https://github.com/dialectic-playground/rs) | Rust implementation | Planned |
 | [`go`](https://github.com/dialectic-playground/go) | Go implementation | Planned |

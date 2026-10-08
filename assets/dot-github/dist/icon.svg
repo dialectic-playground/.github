@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   width="512"
+   height="512"
+   role="img"
+   aria-labelledby="dp-title"
+   version="1.1"
+   id="svg10"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <title
+     id="dp-title">Dialectic Playground — .github icon</title>
+  <!-- Scaffolded by tools/scaffold-assets.sh from assets/templates/icon.svg.tmpl. Safe to hand-tune. -->
+  <defs
+     id="defs2">
+    <linearGradient
+       id="dp-bg"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#1E1B4B"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#0B1120"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <rect
+     class="dp-tile"
+     width="512"
+     height="512"
+     rx="112"
+     fill="url(#dp-bg)"
+     id="rect2" />
+  <g
+     transform="translate(256 256) scale(0.9) translate(-256 -256)"
+     id="g10">
+    <!-- dp-mark: the shared "core" mark. 512×512 design space, centered on (256,256).
+     thesis (sky ring) × antithesis (rose ring) → synthesis (accent lens) + per-repo glyph. -->
+    <g
+       class="dp-mark"
+       id="g9">
+      <defs
+         id="defs3">
+        <clipPath
+           id="dp-thesis">
+          <circle
+             cx="200"
+             cy="256"
+             r="140"
+             id="circle2" />
+        </clipPath>
+        <clipPath
+           id="dp-lower-crossing">
+          <rect
+             x="200"
+             y="256"
+             width="112"
+             height="200"
+             id="rect3" />
+        </clipPath>
+      </defs>
+      <circle
+         cx="200"
+         cy="256"
+         r="140"
+         fill="#38BDF8"
+         fill-opacity="0.16"
+         id="circle3" />
+      <circle
+         cx="312"
+         cy="256"
+         r="140"
+         fill="#FB7185"
+         fill-opacity="0.16"
+         id="circle4" />
+      <circle
+         cx="312"
+         cy="256"
+         r="140"
+         fill="#4ADE80"
+         clip-path="url(#dp-thesis)"
+         id="circle5" />
+      <circle
+         cx="200"
+         cy="256"
+         r="140"
+         fill="none"
+         stroke="#38BDF8"
+         stroke-width="24"
+         id="circle6" />
+      <circle
+         cx="312"
+         cy="256"
+         r="140"
+         fill="none"
+         stroke="#FB7185"
+         stroke-width="24"
+         id="circle7" />
+      <!-- re-draw the thesis ring over the lower crossing so the rings interlock -->
+      <circle
+         cx="200"
+         cy="256"
+         r="140"
+         fill="none"
+         stroke="#38BDF8"
+         stroke-width="24"
+         clip-path="url(#dp-lower-crossing)"
+         id="circle8" />
+      <g
+         class="dp-glyph"
+         transform="translate(256 256) scale(1.1)"
+         id="g8">
+        <path
+           d="m -37.611084,6.144043 h 8.942871 V 16 h -8.942871 z M 5.0085449,0.47753906 q 0,-4.02832036 -1.5307617,-6.44531246 -1.5307617,-2.4438477 -4.02832031,-2.4438477 -2.47070309,0 -4.00146489,2.4169922 -1.5039062,2.4169922 -1.5039062,6.47216796 0,4.08203124 1.5039062,6.49902344 1.5307618,2.4169922 4.00146489,2.4169922 2.49755861,0 4.02832031,-2.4169922 Q 5.0085449,4.5327148 5.0085449,0.47753906 Z M 12.877197,13.744141 q 0,7.224121 -3.2763669,10.419921 -3.2495117,3.222657 -10.58105471,3.222657 -2.47070309,0 -4.88769529,-0.375977 -2.4169922,-0.349121 -4.9145511,-1.101074 v -7.224121 q 2.2290042,1.235351 4.5385745,1.826172 2.3095703,0.59082 4.753418,0.59082 3.3300781,0 4.9145508,-1.584473 1.5844726,-1.557617 1.5844726,-4.887695 v -3.249512 q -1.1547851,2.148438 -3.0615234,3.195801 -1.9067383,1.047363 -4.6459961,1.047363 -5.15625,0 -8.1909184,-4.02832 -3.034668,-4.0283202 -3.034668,-10.93017566 0,-7.14355464 3.034668,-11.33300734 3.0346684,-4.189454 8.1372075,-4.189454 2.57812495,0 4.5922851,1.208496 2.0141602,1.208497 3.1689453,3.410645 v -3.840332 H 12.877197 Z M 45.318604,-3.5239258 V 16 H 37.503662 V -2.3154297 q 0,-3.2495117 -0.939941,-4.6459961 -0.913086,-1.3964844 -3.007813,-1.3964844 -2.148437,0 -3.356933,1.9067383 -1.208496,1.8798828 -1.208496,5.2368164 V 16 h -7.814942 v -41.787109 h 7.814942 v 16.2207027 q 0.832519,-2.4975587 2.846679,-3.8671877 2.01416,-1.369629 4.86084,-1.369629 4.27002,0 6.445313,2.84668 2.175293,2.8198242 2.175293,8.4326172 z"
+           id="text8"
+           style="font-weight:700;font-size:55px;font-family:'JetBrains Mono', 'DejaVu Sans Mono', Menlo, Consolas, monospace;text-anchor:middle;fill:#052e16"
+           aria-label=".gh" />
+      </g>
+    </g>
+  </g>
+</svg>

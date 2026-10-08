@@ -1,0 +1,18 @@
+<!-- dp-mark: the shared "core" mark. 512×512 design space, centered on (256,256).
+     thesis (sky ring) × antithesis (rose ring) → synthesis (accent lens) + per-repo glyph. -->
+<g class="dp-mark">
+  <defs>
+    <clipPath id="dp-thesis"><circle cx="200" cy="256" r="140"/></clipPath>
+    <clipPath id="dp-lower-crossing"><rect x="200" y="256" width="112" height="200"/></clipPath>
+  </defs>
+  <circle cx="200" cy="256" r="140" fill="#38BDF8" fill-opacity="0.16"/>
+  <circle cx="312" cy="256" r="140" fill="#FB7185" fill-opacity="0.16"/>
+  <circle cx="312" cy="256" r="140" fill="${ACCENT}" clip-path="url(#dp-thesis)"/>
+  <circle cx="200" cy="256" r="140" fill="none" stroke="#38BDF8" stroke-width="24"/>
+  <circle cx="312" cy="256" r="140" fill="none" stroke="#FB7185" stroke-width="24"/>
+  <!-- re-draw the thesis ring over the lower crossing so the rings interlock -->
+  <circle cx="200" cy="256" r="140" fill="none" stroke="#38BDF8" stroke-width="24" clip-path="url(#dp-lower-crossing)"/>
+  <g class="dp-glyph" transform="translate(256 256) scale(1.1)">
+${GLYPH_SVG}
+  </g>
+</g>
