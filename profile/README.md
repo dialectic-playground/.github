@@ -1,12 +1,19 @@
-## Hi there 👋
+# Welcome to Dialectic Playground 🧪
 
-<!--
+A polyglot workshop exploring language design, implementations, and shared tooling.
 
-**Here are some ideas to get you started:**
+## 🧭 About the Project
+**Dialectic Playground** is a centralized home for multi-language experimentation, comparative research, and side-by-side implementations. Each programming language lives in its own repository, accompanied by a shared documentation hub.
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+## 📂 Layout & Repositories
+
+| Repository | Focus / Language | Status |
+| :--- | :--- | :--- |
+| [`documentation`](https://github.com/dialectic-playground/documentation) | Shared guides, specs, and cross-cutting notes | Active |
+| [`py`](https://github.com/dialectic-playground/py) | Python implementation & scripts | Active |
+| [`rs`](https://github.com/dialectic-playground/rs) | Rust implementation | Planned |
+| [`go`](https://github.com/dialectic-playground/go) | Go implementation | Planned |
+| *and more...* | *C, C#, Java, JS, TS, PHP, Ruby, etc.* | *Roadmap* |
+
+## 🚀 Vision
+By building equivalent structures and ideas across different ecosystems, this organization serves as a sandbox for evaluating syntax paradigms, tooling behaviors, and design patterns side-by-side.
