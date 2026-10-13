@@ -1,0 +1,29 @@
+# Organization-wide repository defaults, applied to EVERY repository by safe-settings
+# (https://github.com/github/safe-settings). Per-repository values (description, homepage,
+# topics, exceptions) live in repos/<name>.yml; the branch ruleset lives in
+# suborgs/all-repositories.yml. Do not change these settings in the GitHub UI: the next sync
+# reverts them. See README.md in this directory.
+
+repository:
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  has_discussions: false
+  # Squash merges only; the pull request title becomes the commit subject and the commit
+  # messages (including their DCO Signed-off-by lines) become the body.
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: false
+  squash_merge_commit_title: PR_TITLE
+  squash_merge_commit_message: COMMIT_MESSAGES
+  allow_auto_merge: true
+  allow_update_branch: true
+  delete_branch_on_merge: true
+  web_commit_signoff_required: true
+  security:
+    enableVulnerabilityAlerts: true
+    enableAutomatedSecurityFixes: true
+
+teams:
+  - name: maintainers
+    permission: admin

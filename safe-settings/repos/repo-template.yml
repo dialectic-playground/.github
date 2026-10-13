@@ -1,0 +1,5 @@
+repository:
+  name: repo-template
+  description: "Template for new Dialectic Playground repositories: standard files, CI, Dependabot, and conventions."
+  homepage: https://dialectic-playground.github.io/docs/how-to/add-a-repository/
+  topics: [dialectic-playground, template]

@@ -1,0 +1,74 @@
+# Applies safe-settings/ (repository settings, rulesets, teams, About text) to every repository
+# in the organization, and reverts drift made in the GitHub UI.
+#
+# Runs on every change to safe-settings/ on main, daily, and on demand. Run it manually
+# right after creating a repository so the new repository gets its settings immediately.
+# Requires the "safe-settings" GitHub App: variable SAFE_SETTINGS_APP_ID and secret
+# SAFE_SETTINGS_PRIVATE_KEY (see safe-settings/README.md).
+name: Safe Settings
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "safe-settings/**"
+      - ".github/workflows/safe-settings.yml"
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Report changes without applying them
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: safe-settings
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Sync repository settings
+    # Skipped (not failed) until the safe-settings App is configured for this repository.
+    if: vars.SAFE_SETTINGS_APP_ID != ''
+    runs-on: ubuntu-latest
+    env:
+      SAFE_SETTINGS_DIR: ${{ github.workspace }}/.safe-settings-code
+    steps:
+      - name: Check out configuration
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Check out safe-settings
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: github/safe-settings
+          ref: a9a1f366ad6a738b55682d346d94f8d6c4893b09 # 3.0.0
+          path: .safe-settings-code
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: .safe-settings-code/package-lock.json
+
+      - name: Install safe-settings
+        working-directory: ${{ env.SAFE_SETTINGS_DIR }}
+        run: npm ci --no-audit --no-fund
+
+      - name: Run full sync
+        working-directory: ${{ env.SAFE_SETTINGS_DIR }}
+        run: npm run full-sync
+        env:
+          GH_ORG: ${{ github.repository_owner }}
+          APP_ID: ${{ vars.SAFE_SETTINGS_APP_ID }}
+          PRIVATE_KEY: ${{ secrets.SAFE_SETTINGS_PRIVATE_KEY }}
+          ADMIN_REPO: .github
+          CONFIG_PATH: safe-settings
+          DEPLOYMENT_CONFIG_FILE: ${{ github.workspace }}/safe-settings/deployment-settings.yml
+          # Scheduled and push runs apply changes; manual runs default to a dry run.
+          FULL_SYNC_NOP: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'true' || 'false' }}

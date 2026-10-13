@@ -21,7 +21,9 @@ Dialectic Playground.
 | [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/), [`.github/pull_request_template.md`](.github/pull_request_template.md) | Default issue forms and pull request template for every repository without its own |
 | [`assets/`](assets/) | Icons, logos, and social previews for the organization and each repository. See [`assets/README.md`](assets/README.md). |
 | [`tools/`](tools/) | Asset scaffolding and generation scripts. See [`tools/README.md`](tools/README.md). |
-| [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | CI: shellcheck, asset checks, DCO |
+| [`safe-settings/`](safe-settings/) | Repository settings as code: defaults, the branch ruleset, and each repository's description, homepage, and topics. See [`safe-settings/README.md`](safe-settings/README.md). |
+| [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | CI: shellcheck, YAML, asset checks, DCO |
+| [`.github/workflows/safe-settings.yml`](.github/workflows/safe-settings.yml) | Applies `safe-settings/` to every repository (on change, daily, and on demand) |
 
 ## Contributing
 

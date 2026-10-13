@@ -1,6 +1,6 @@
 # CI for the organization's .github repository (profile, brand assets, asset tooling).
 #
-# - Lint: shellcheck and bash syntax for tools/*.sh.
+# - Lint: shellcheck and bash syntax for tools/*.sh; every YAML file parses.
 # - Assets: every asset set scaffolds cleanly (checked in a scratch copy), every SVG is
 #   well-formed XML, and every set's dist/ contains the complete output list.
 # - DCO: Signed-off-by on every pull-request commit.
@@ -31,6 +31,17 @@ jobs:
 
       - name: Run shellcheck
         run: shellcheck tools/*.sh
+
+      - name: YAML files parse (workflows, safe-settings, issue forms)
+        run: |
+          python3 - <<'PY'
+          import glob, sys, yaml
+          files = sorted(glob.glob(".github/**/*.yml", recursive=True) + glob.glob("safe-settings/**/*.yml", recursive=True))
+          for path in files:
+              with open(path, encoding="utf-8") as handle:
+                  yaml.safe_load(handle)
+          print(f"{len(files)} YAML files parsed")
+          PY
 
   assets:
     name: Assets
