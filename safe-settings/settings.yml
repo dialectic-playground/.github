@@ -19,7 +19,8 @@ repository:
   allow_auto_merge: true
   allow_update_branch: true
   delete_branch_on_merge: true
-  web_commit_signoff_required: true
+  # Web commit sign-off is enforced organization-wide (organization settings); GitHub rejects
+  # setting it per repository while the organization enforces it.
   security:
     enableVulnerabilityAlerts: true
     enableAutomatedSecurityFixes: true
