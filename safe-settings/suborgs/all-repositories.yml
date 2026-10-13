@@ -1,9 +1,11 @@
-# Settings for every repository in the organization ("*").
+# Settings for every repository in the organization ("*" and ".*").
 # Rulesets defined in a suborg are repository-level rulesets: the Free plan does not offer
 # organization rulesets, so each repository gets its own identical copy of this ruleset.
 
 suborgrepos:
   - "*"
+  # Glob "*" does not match names starting with a dot, such as .github.
+  - ".*"
 
 rulesets:
   - name: Protect default branch
@@ -27,9 +29,16 @@ rulesets:
           require_last_push_approval: false
           required_review_thread_resolution: true
           allowed_merge_methods: [squash]
+          # GitHub server-side defaults, stated explicitly so syncs report no drift.
+          required_reviewers: []
+          require_extra_approval_for_unattributed_changes: true
+          dismissal_restriction:
+            enabled: false
+            allowed_actors: []
       - type: required_status_checks
         parameters:
           strict_required_status_checks_policy: false
+          do_not_enforce_on_create: false
           required_status_checks:
             # Every repository's CI workflow ends with a job named "CI result".
             # integration_id 15368 is GitHub Actions, so no other app can satisfy the check.
