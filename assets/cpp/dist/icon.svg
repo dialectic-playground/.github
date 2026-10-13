@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   width="512"
+   height="512"
+   role="img"
+   aria-labelledby="dp-title"
+   version="1.1"
+   id="svg10"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <title
+     id="dp-title">Dialectic Playground — cpp icon</title>
+  <!-- Scaffolded by tools/scaffold-assets.sh from assets/templates/icon.svg.tmpl. Safe to hand-tune. -->
+  <defs
+     id="defs2">
+    <linearGradient
+       id="dp-bg"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#1E1B4B"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#0B1120"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <rect
+     class="dp-tile"
+     width="512"
+     height="512"
+     rx="112"
+     fill="url(#dp-bg)"
+     id="rect2" />
+  <g
+     transform="translate(256 256) scale(0.9) translate(-256 -256)"
+     id="g10">
+    <!-- dp-mark: the shared "core" mark. 512×512 design space, centered on (256,256).
+     thesis (sky ring) × antithesis (rose ring) → synthesis (accent lens) + per-repo glyph. -->
+    <g
+       class="dp-mark"
+       id="g9">
+      <defs
+         id="defs3">
+        <clipPath
+           id="dp-thesis">
+          <circle
+             cx="200"
+             cy="256"
+             r="140"
+             id="circle2" />
+        </clipPath>
+        <clipPath
+           id="dp-lower-crossing">
+          <rect
+             x="200"
+             y="256"
+             width="112"
+             height="200"
+             id="rect3" />
+        </clipPath>
+      </defs>
+      <circle
+         cx="200"
+         cy="256"
+         r="140"
+         fill="#38BDF8"
+         fill-opacity="0.16"
+         id="circle3" />
+      <circle
+         cx="312"
+         cy="256"
+         r="140"
+         fill="#FB7185"
+         fill-opacity="0.16"
+         id="circle4" />
+      <circle
+         cx="312"
+         cy="256"
+         r="140"
+         fill="#D6336C"
+         clip-path="url(#dp-thesis)"
+         id="circle5" />
+      <circle
+         cx="200"
+         cy="256"
+         r="140"
+         fill="none"
+         stroke="#38BDF8"
+         stroke-width="24"
+         id="circle6" />
+      <circle
+         cx="312"
+         cy="256"
+         r="140"
+         fill="none"
+         stroke="#FB7185"
+         stroke-width="24"
+         id="circle7" />
+      <!-- re-draw the thesis ring over the lower crossing so the rings interlock -->
+      <circle
+         cx="200"
+         cy="256"
+         r="140"
+         fill="none"
+         stroke="#38BDF8"
+         stroke-width="24"
+         clip-path="url(#dp-lower-crossing)"
+         id="circle8" />
+      <g
+         class="dp-glyph"
+         transform="translate(256 256) scale(1.1)"
+         id="g8">
+        <path
+           d="m -32.505031,16.55 q -3.905,0 -6.82,-1.43 -2.86,-1.485 -4.455,-4.125 -1.595,-2.695 -1.595,-6.325 v -7.59 q 0,-3.63 1.595,-6.27 1.595,-2.695 4.455,-4.125 2.915,-1.485 6.82,-1.485 5.665,0 9.075,2.97 3.465,2.915 3.63,7.975 h -6.765 q -0.165,-2.365 -1.815,-3.63 -1.595,-1.32 -4.125,-1.32 -2.805,0 -4.4,1.54 -1.595,1.485 -1.595,4.29 V 4.67 q 0,2.805 1.595,4.345 1.595,1.54 4.4,1.54 2.585,0 4.18,-1.265 1.595,-1.32 1.76,-3.685 h 6.765 q -0.165,5.06 -3.63,8.03 -3.41,2.915 -9.075,2.915 z M -0.38498569,10.94 V 1.04 H -10.229986 v -6.38 h 9.84500031 v -9.9 H 6.4350143 v 9.9 H 26.565014 v -9.9 h 6.82 v 9.9 h 9.845 v 6.38 h -9.845 v 9.9 h -6.82 V 1.04 H 6.4350143 v 9.9 z"
+           id="text8"
+           style="font-weight:700;font-size:55px;font-family:'JetBrains Mono', 'DejaVu Sans Mono', Menlo, Consolas, monospace;text-anchor:middle;fill:#ffffff"
+           aria-label="c++" />
+      </g>
+    </g>
+  </g>
+</svg>

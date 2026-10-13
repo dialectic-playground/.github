@@ -1,0 +1,5 @@
+repository:
+  name: pl
+  description: "Perl implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/pl/
+  topics: [dialectic-playground, curriculum-implementation, perl, cli]

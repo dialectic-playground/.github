@@ -1,0 +1,5 @@
+repository:
+  name: java
+  description: "Java implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/java/
+  topics: [dialectic-playground, curriculum-implementation, java, cli]

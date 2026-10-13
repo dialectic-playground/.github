@@ -1,0 +1,5 @@
+repository:
+  name: ts
+  description: "TypeScript implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/ts/
+  topics: [dialectic-playground, curriculum-implementation, typescript, cli]

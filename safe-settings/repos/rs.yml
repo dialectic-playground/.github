@@ -1,0 +1,5 @@
+repository:
+  name: rs
+  description: "Rust implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/rs/
+  topics: [dialectic-playground, curriculum-implementation, rust, cli]
