@@ -58,13 +58,30 @@ git rebase --signoff main                    # sign off every commit on your bra
 The **DCO** check fails a pull request if any commit is missing a matching sign-off.
 Commits made in the GitHub web editor are signed off automatically.
 
+## Container-first development
+
+Every repository runs its tasks in a **toolchain container** that reads and writes your working
+tree. The same image is used by `make`, by the dev container, and by CI:
+
+```sh
+make check                       # Podman, then Docker, then the local system
+DP_RUNTIME=docker make check     # force a runtime: podman | docker | local
+tools/dp-run <command>           # any command in the toolchain environment
+```
+
+You need Podman (preferred) or Docker. Without either, tasks run on your system, which then
+needs the repository's native toolchain. See
+[Container-first development](https://dialectic-playground.github.io/docs/explanation/container-first-development/).
+
 ## Repository conventions
 
 Every repository uses the same baseline so that work feels the same everywhere:
 
 - `.editorconfig`, `.gitattributes` (LF line endings), and a focused `.gitignore`
-- `.github/workflows/ci.yml` (workflow **CI**) with actions pinned to full commit SHAs, and
-  `.github/dependabot.yml`
+- `Makefile` (with `make check` matching CI), `Containerfile` (toolchain image pinned by
+  digest), `.devcontainer/`, and the shared `tools/dp-run` and `tools/container.mk`
+- `.github/workflows/ci.yml` (workflow **CI**: container and native jobs) with actions pinned
+  to full commit SHAs, and `.github/dependabot.yml` (including the `docker` ecosystem)
 - `.github/CODEOWNERS` assigning `@dialectic-playground/maintainers`
 - MIT license
 

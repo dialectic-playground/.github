@@ -1,8 +1,9 @@
 # CI for the organization's .github repository (profile, brand assets, asset tooling).
 #
-# - Lint: shellcheck and bash syntax for tools/*.sh; every YAML file parses.
-# - Assets: every asset set scaffolds cleanly (checked in a scratch copy), every SVG is
-#   well-formed XML, and every set's dist/ contains the complete output list.
+# Container-first: every check is a make target (see Makefile), run two ways:
+# - Container (podman): the same toolchain image developers use; also proves that the
+#   committed brand assets are exactly reproducible (make verify-assets).
+# - Native (ubuntu-latest): the same targets with DP_RUNTIME=local.
 # - DCO: Signed-off-by on every pull-request commit.
 # - "CI result" is the single check required by the branch ruleset (same name in every repo).
 #
@@ -19,62 +20,35 @@ permissions:
   contents: read
 
 jobs:
-  lint:
-    name: Lint
+  container:
+    name: Container (podman)
     runs-on: ubuntu-latest
+    env:
+      DP_RUNTIME: podman
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Check shell syntax
-        run: for script in tools/*.sh; do bash -n "$script"; done
+      - name: Show toolchain environment
+        run: make dp-info
 
-      - name: Run shellcheck
-        run: shellcheck tools/*.sh
+      - name: make check verify-assets
+        run: make check verify-assets
 
-      - name: YAML files parse (workflows, safe-settings, issue forms)
-        run: |
-          python3 - <<'PY'
-          import glob, sys, yaml
-          files = sorted(glob.glob(".github/**/*.yml", recursive=True) + glob.glob("safe-settings/**/*.yml", recursive=True))
-          for path in files:
-              with open(path, encoding="utf-8") as handle:
-                  yaml.safe_load(handle)
-          print(f"{len(files)} YAML files parsed")
-          PY
-
-  assets:
-    name: Assets
+  native:
+    name: Native (ubuntu-latest)
     runs-on: ubuntu-latest
+    env:
+      DP_RUNTIME: local
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Install xmllint
-        run: sudo apt-get update -q && sudo apt-get install -y --no-install-recommends libxml2-utils
+      - name: Install native tools
+        run: sudo apt-get update -q && sudo apt-get install -y --no-install-recommends libxml2-utils gettext-base
 
-      - name: Every asset set scaffolds cleanly (scratch copy)
-        run: |
-          scratch="$RUNNER_TEMP/scaffold"
-          cp -r . "$scratch"
-          "$scratch/tools/scaffold-assets.sh" --force --all
-
-      - name: Every SVG is well-formed XML (templates hold fragments, so they are excluded)
-        run: find assets -path assets/templates -prune -o -name '*.svg' -print0 | xargs -0 xmllint --noout
-
-      - name: Every asset set has a complete dist/
-        run: |
-          status=0
-          expected="apple-touch-icon.png favicon-16x16.png favicon-32x32.png favicon.ico
-            icon-256.png icon-512.png icon.svg logo-dark.png logo-dark.svg logo.png logo.svg
-            social-preview.png social-preview.svg"
-          for set in assets/*/; do
-            [ "$set" = "assets/templates/" ] && continue
-            for file in $expected; do
-              [ -f "$set/dist/$file" ] || { echo "::error::$set is missing dist/$file (run tools/generate-assets.sh)"; status=1; }
-            done
-          done
-          exit "$status"
+      - name: make check
+        run: make check
 
   dco:
     name: DCO
@@ -105,7 +79,7 @@ jobs:
   ci-result:
     name: CI result
     if: always()
-    needs: [lint, assets, dco]
+    needs: [container, native, dco]
     runs-on: ubuntu-latest
     steps:
       - name: Fail if any required job failed or was cancelled
