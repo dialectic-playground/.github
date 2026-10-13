@@ -55,10 +55,11 @@ recognizably part of one family.
   Helvetica Neue, Arial, `sans-serif`
 
 The `dist/*.svg` files have their text **converted to paths**, so they look the same everywhere
-whether or not the viewer has these fonts. They are drawn in whichever font was installed on the
-machine that ran the generator. The current files were rendered with the DejaVu fallbacks. To
-get the intended fonts, install JetBrains Mono and Inter (both under the SIL Open Font License)
-and regenerate. The generator prints a note when either one is missing.
+whether or not the viewer has these fonts. Assets are rendered in the repository's toolchain
+container, which installs JetBrains Mono and Inter (both under the SIL Open Font License) at
+pinned, checksum-verified versions. Rendering is therefore byte-for-byte reproducible:
+CI regenerates every `dist/` in that container and fails if the result differs from what is
+committed (`make verify-assets`).
 
 ### Palette registry
 
@@ -172,23 +173,25 @@ because it references this repository through absolute URLs:
 
 ## Adding assets for a new repository
 
-Requirements: `bash`, `envsubst` (gettext), Inkscape ≥ 1.0, and ImageMagick (`magick` or
-`convert`). `xmllint` is optional and validates the scaffolded SVGs.
+Requirements: Podman or Docker. Every command runs in the repository's toolchain container
+([`Containerfile`](../Containerfile)), so Inkscape, ImageMagick, and the brand fonts come with it.
+Without a container engine (or with `DP_RUNTIME=local`), the commands run on the host, which then
+needs `bash`, `envsubst` (gettext), Inkscape ≥ 1.0, ImageMagick, `xmllint`, and both fonts.
 
 Example for a new `rs` repository:
 
 ```bash
 # 1. Create assets/rs/asset.env from the example template (nothing is rendered yet)
-tools/scaffold-assets.sh rs
+tools/dp-run tools/scaffold-assets.sh rs
 
 # 2. Edit assets/rs/asset.env: set ACCENT/GLYPH_COLOR from the palette registry above,
 #    GLYPH_TEXT="rs", and the two TAGLINE lines (≤ 42 characters each)
 
 # 3. Scaffold the source SVGs from the templates
-tools/scaffold-assets.sh rs
+tools/dp-run tools/scaffold-assets.sh rs
 
-# 4. Render dist/
-tools/generate-assets.sh rs
+# 4. Render dist/ for every set (deterministic: unchanged sets stay byte-identical)
+make assets
 
 # 5. Review the PNGs in assets/rs/dist/, change the palette registry row to Active, add the
 #    set to the preview table at the top of this file, then commit
@@ -202,9 +205,9 @@ full checklist for bringing a repository online.
 
 | You want to… | Do this |
 | :-- | :-- |
-| Change something for **every** set (ring colors, layout, background) | Edit `templates/` → `tools/scaffold-assets.sh --force --all` → `tools/generate-assets.sh` |
-| Change one set's accent, glyph, or tagline | Edit `<slug>/asset.env` → `tools/scaffold-assets.sh --force <slug>` → `tools/generate-assets.sh <slug>` |
-| Hand-tune one set's artwork | Edit `<slug>/*.svg` directly (in Inkscape or a text editor) → `tools/generate-assets.sh <slug>`. **Don't** run `scaffold-assets.sh --force` on that set afterwards, or your edits will be overwritten. |
+| Change something for **every** set (ring colors, layout, background) | Edit `templates/` → `make scaffold` → `make assets` |
+| Change one set's accent, glyph, or tagline | Edit `<slug>/asset.env` → `tools/dp-run tools/scaffold-assets.sh --force <slug>` → `make assets` |
+| Hand-tune one set's artwork | Edit `<slug>/*.svg` directly (in Inkscape or a text editor) → `make assets`. **Don't** run `make scaffold` or `scaffold-assets.sh --force` on that set afterwards, or your edits will be overwritten. |
 | Add a shape glyph instead of text | Add `templates/glyphs/<name>.svg` (see below) and set `GLYPH_FILE="<name>"` |
 
 **Before re-scaffolding with `--force`, check `git diff`.** If a set's source SVGs have been

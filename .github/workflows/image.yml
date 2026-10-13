@@ -1,0 +1,42 @@
+# Publishes the asset-tools toolchain image (./Containerfile) to
+# ghcr.io/dialectic-playground/asset-tools whenever it changes on main.
+# Developers and CI build the same Containerfile locally; the published image is a
+# ready-made copy (for example DP_IMAGE=ghcr.io/dialectic-playground/asset-tools:latest).
+name: Image
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - Containerfile
+      - .github/workflows/image.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish asset-tools image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    env:
+      IMAGE: ghcr.io/dialectic-playground/asset-tools
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Build image
+        run: podman build --platform linux/amd64 --tag "$IMAGE:$GITHUB_SHA" --tag "$IMAGE:latest" --file Containerfile .
+
+      - name: Log in to GitHub Container Registry
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: printf '%s' "$GITHUB_TOKEN" | podman login ghcr.io --username "$GITHUB_ACTOR" --password-stdin
+
+      - name: Push image
+        run: |
+          podman push "$IMAGE:$GITHUB_SHA"
+          podman push "$IMAGE:latest"
