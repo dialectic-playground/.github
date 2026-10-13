@@ -17,6 +17,7 @@ A polyglot workshop exploring language design, implementations, and shared tooli
 | Repository | Focus / Language | Status |
 | :--- | :--- | :--- |
 | [`docs`](https://github.com/dialectic-playground/docs) | Shared guides, specs, and cross-cutting notes | Active |
+| [`sdlc-curriculum`](https://github.com/dialectic-playground/sdlc-curriculum) | Specification-driven curriculum: specs, black-box tests & templates for eleven cross-platform CLI tools | Active |
 | [`py`](https://github.com/dialectic-playground/py) | Python implementation & scripts | Active |
 | [`rs`](https://github.com/dialectic-playground/rs) | Rust implementation | Planned |
 | [`go`](https://github.com/dialectic-playground/go) | Go implementation | Planned |
