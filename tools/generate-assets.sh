@@ -116,7 +116,7 @@ generate_set() {
 }
 
 main() {
-  case ${1:-} in -h|--help) usage ;; esac
+  case ${1:-} in -h|--help) usage 0 ;; esac
   check_deps
   TMP=$(mktemp -d)
   trap 'rm -rf "$TMP"' EXIT

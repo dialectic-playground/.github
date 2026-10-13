@@ -1,0 +1,105 @@
+# CI for the organization's .github repository (profile, brand assets, asset tooling).
+#
+# - Lint: shellcheck and bash syntax for tools/*.sh.
+# - Assets: every asset set scaffolds cleanly (checked in a scratch copy), every SVG is
+#   well-formed XML, and every set's dist/ contains the complete output list.
+# - DCO: Signed-off-by on every pull-request commit.
+# - "CI result" is the single check required by the branch ruleset (same name in every repo).
+#
+# Actions are pinned to full commit SHAs (organization policy); Dependabot keeps them current.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Check shell syntax
+        run: for script in tools/*.sh; do bash -n "$script"; done
+
+      - name: Run shellcheck
+        run: shellcheck tools/*.sh
+
+  assets:
+    name: Assets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install xmllint
+        run: sudo apt-get update -q && sudo apt-get install -y --no-install-recommends libxml2-utils
+
+      - name: Every asset set scaffolds cleanly (scratch copy)
+        run: |
+          scratch="$RUNNER_TEMP/scaffold"
+          cp -r . "$scratch"
+          "$scratch/tools/scaffold-assets.sh" --force --all
+
+      - name: Every SVG is well-formed XML (templates hold fragments, so they are excluded)
+        run: find assets -path assets/templates -prune -o -name '*.svg' -print0 | xargs -0 xmllint --noout
+
+      - name: Every asset set has a complete dist/
+        run: |
+          status=0
+          expected="apple-touch-icon.png favicon-16x16.png favicon-32x32.png favicon.ico
+            icon-256.png icon-512.png icon.svg logo-dark.png logo-dark.svg logo.png logo.svg
+            social-preview.png social-preview.svg"
+          for set in assets/*/; do
+            [ "$set" = "assets/templates/" ] && continue
+            for file in $expected; do
+              [ -f "$set/dist/$file" ] || { echo "::error::$set is missing dist/$file (run tools/generate-assets.sh)"; status=1; }
+            done
+          done
+          exit "$status"
+
+  dco:
+    name: DCO
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository (full history)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Check Signed-off-by on every commit
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          status=0
+          for commit in $(git rev-list --no-merges "$BASE_SHA..$HEAD_SHA"); do
+            author="$(git log -1 --format='%an <%ae>' "$commit")"
+            case "$author" in *"[bot]@users.noreply.github.com>") continue ;; esac
+            if ! git log -1 --format=%B "$commit" | grep -qiF "Signed-off-by: $author"; then
+              echo "::error::Commit $commit is missing 'Signed-off-by: $author' (use git commit -s)"
+              status=1
+            fi
+          done
+          exit "$status"
+
+  ci-result:
+    name: CI result
+    if: always()
+    needs: [lint, assets, dco]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if any required job failed or was cancelled
+        if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+        run: exit 1
+
+      - name: All required jobs passed
+        run: echo "All required jobs succeeded or were skipped."
