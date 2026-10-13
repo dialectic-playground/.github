@@ -1,0 +1,37 @@
+# Settings for every repository in the organization ("*").
+# Rulesets defined in a suborg are repository-level rulesets: the Free plan does not offer
+# organization rulesets, so each repository gets its own identical copy of this ruleset.
+
+suborgrepos:
+  - "*"
+
+rulesets:
+  - name: Protect default branch
+    target: branch
+    enforcement: active
+    # No bypass for anyone, including organization owners.
+    bypass_actors: []
+    conditions:
+      ref_name:
+        include: ["~DEFAULT_BRANCH"]
+        exclude: []
+    rules:
+      - type: deletion
+      - type: non_fast_forward
+      - type: required_linear_history
+      - type: pull_request
+        parameters:
+          required_approving_review_count: 0
+          dismiss_stale_reviews_on_push: false
+          require_code_owner_review: false
+          require_last_push_approval: false
+          required_review_thread_resolution: true
+          allowed_merge_methods: [squash]
+      - type: required_status_checks
+        parameters:
+          strict_required_status_checks_policy: false
+          required_status_checks:
+            # Every repository's CI workflow ends with a job named "CI result".
+            # integration_id 15368 is GitHub Actions, so no other app can satisfy the check.
+            - context: CI result
+              integration_id: 15368

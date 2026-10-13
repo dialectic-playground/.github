@@ -1,0 +1,4 @@
+# safe-settings deployment configuration. Every repository in the organization is managed;
+# none are excluded.
+restrictedRepos:
+  exclude: []

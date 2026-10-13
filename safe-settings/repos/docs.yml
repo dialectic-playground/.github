@@ -1,0 +1,5 @@
+repository:
+  name: docs
+  description: "Documentation site for Dialectic Playground, organized with Diátaxis: tutorials, how-to guides, reference, and explanation."
+  homepage: https://dialectic-playground.github.io/docs/
+  topics: [dialectic-playground, documentation, diataxis, mkdocs]

@@ -1,0 +1,7 @@
+repository:
+  name: .github
+  description: Organization profile, community health defaults, brand assets, and asset tooling for Dialectic Playground.
+  homepage: https://dialectic-playground.github.io/docs/
+  topics: [dialectic-playground, organization, community-health, brand-assets]
+  # Backs the organization-wide Discussions.
+  has_discussions: true
