@@ -1,0 +1,5 @@
+repository:
+  name: cpp
+  description: "C++ implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/cpp/
+  topics: [dialectic-playground, curriculum-implementation, cpp, cli]

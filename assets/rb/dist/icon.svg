@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   width="512"
+   height="512"
+   role="img"
+   aria-labelledby="dp-title"
+   version="1.1"
+   id="svg10"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <title
+     id="dp-title">Dialectic Playground — rb icon</title>
+  <!-- Scaffolded by tools/scaffold-assets.sh from assets/templates/icon.svg.tmpl. Safe to hand-tune. -->
+  <defs
+     id="defs2">
+    <linearGradient
+       id="dp-bg"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#1E1B4B"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#0B1120"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <rect
+     class="dp-tile"
+     width="512"
+     height="512"
+     rx="112"
+     fill="url(#dp-bg)"
+     id="rect2" />
+  <g
+     transform="translate(256 256) scale(0.9) translate(-256 -256)"
+     id="g10">
+    <!-- dp-mark: the shared "core" mark. 512×512 design space, centered on (256,256).
+     thesis (sky ring) × antithesis (rose ring) → synthesis (accent lens) + per-repo glyph. -->
+    <g
+       class="dp-mark"
+       id="g9">
+      <defs
+         id="defs3">
+        <clipPath
+           id="dp-thesis">
+          <circle
+             cx="200"
+             cy="256"
+             r="140"
+             id="circle2" />
+        </clipPath>
+        <clipPath
+           id="dp-lower-crossing">
+          <rect
+             x="200"
+             y="256"
+             width="112"
+             height="200"
+             id="rect3" />
+        </clipPath>
+      </defs>
+      <circle
+         cx="200"
+         cy="256"
+         r="140"
+         fill="#38BDF8"
+         fill-opacity="0.16"
+         id="circle3" />
+      <circle
+         cx="312"
+         cy="256"
+         r="140"
+         fill="#FB7185"
+         fill-opacity="0.16"
+         id="circle4" />
+      <circle
+         cx="312"
+         cy="256"
+         r="140"
+         fill="#CC342D"
+         clip-path="url(#dp-thesis)"
+         id="circle5" />
+      <circle
+         cx="200"
+         cy="256"
+         r="140"
+         fill="none"
+         stroke="#38BDF8"
+         stroke-width="24"
+         id="circle6" />
+      <circle
+         cx="312"
+         cy="256"
+         r="140"
+         fill="none"
+         stroke="#FB7185"
+         stroke-width="24"
+         id="circle7" />
+      <!-- re-draw the thesis ring over the lower crossing so the rings interlock -->
+      <circle
+         cx="200"
+         cy="256"
+         r="140"
+         fill="none"
+         stroke="#38BDF8"
+         stroke-width="24"
+         clip-path="url(#dp-lower-crossing)"
+         id="circle8" />
+      <g
+         class="dp-glyph"
+         transform="translate(256 256) scale(1.1)"
+         id="g8">
+        <path
+           d="m -41.749032,24 v -45.65 h 10.126 v 8.881 q 0.83,-4.482 4.067,-7.055 3.32,-2.656 8.549,-2.656 6.972,0 10.8730003,4.482 3.901,4.482 3.901,12.533 v 4.316 H -14.608032 v -3.818 q 0,-4.15 -2.158,-6.308 -2.158,-2.241 -6.142,-2.241 -4.15,0 -6.308,2.49 -2.158,2.49 -2.158,7.055 V 24 Z m 70.799034,0.83 q -4.814,0 -8.051,-2.407 -3.237,-2.407 -4.482,-6.723 V 24 H 6.3910019 V -36.59 H 16.766002 v 12.782 l -0.332,10.458 q 1.328,-4.316 4.565,-6.723 3.32,-2.407 8.051,-2.407 6.723,0 10.79,4.731 4.067,4.731 4.067,12.782 V 7.4 q 0,7.968 -4.15,12.699 -4.067,4.731 -10.707,4.731 z m -3.901,-8.964 q 3.984,0 6.142,-2.158 2.241,-2.158 2.241,-6.64 V -4.718 q 0,-4.482 -2.241,-6.64 -2.158,-2.158 -6.142,-2.158 -3.984,0 -6.225,2.407 -2.158,2.407 -2.158,6.806 V 6.653 q 0,4.399 2.158,6.806 2.241,2.407 6.225,2.407 z"
+           id="text8"
+           style="font-weight:700;font-size:83px;font-family:'JetBrains Mono', 'DejaVu Sans Mono', Menlo, Consolas, monospace;text-anchor:middle;fill:#ffffff"
+           aria-label="rb" />
+      </g>
+    </g>
+  </g>
+</svg>

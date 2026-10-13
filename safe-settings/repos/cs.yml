@@ -1,0 +1,5 @@
+repository:
+  name: cs
+  description: "C# implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/cs/
+  topics: [dialectic-playground, curriculum-implementation, csharp, cli]

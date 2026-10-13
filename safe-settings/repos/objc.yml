@@ -1,0 +1,5 @@
+repository:
+  name: objc
+  description: "Objective-C implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/objc/
+  topics: [dialectic-playground, curriculum-implementation, objective-c, cli]

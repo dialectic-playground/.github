@@ -1,0 +1,5 @@
+repository:
+  name: c
+  description: "C implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/c/
+  topics: [dialectic-playground, curriculum-implementation, c, cli]

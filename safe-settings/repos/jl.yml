@@ -1,0 +1,5 @@
+repository:
+  name: jl
+  description: "Julia implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/jl/
+  topics: [dialectic-playground, curriculum-implementation, julia, cli]

@@ -1,0 +1,5 @@
+repository:
+  name: rb
+  description: "Ruby implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/rb/
+  topics: [dialectic-playground, curriculum-implementation, ruby, cli]

@@ -1,0 +1,5 @@
+repository:
+  name: php
+  description: "PHP implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/php/
+  topics: [dialectic-playground, curriculum-implementation, php, cli]

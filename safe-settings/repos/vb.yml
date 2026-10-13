@@ -1,0 +1,5 @@
+repository:
+  name: vb
+  description: "Visual Basic implementation of the Dialectic Playground SDLC curriculum."
+  homepage: https://dialectic-playground.github.io/docs/reference/languages/vb/
+  topics: [dialectic-playground, curriculum-implementation, visual-basic, cli]

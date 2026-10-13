@@ -22,12 +22,24 @@ A polyglot workshop exploring language design, implementations, and shared tooli
 | [`docs`](https://github.com/dialectic-playground/docs) | Documentation site, organized with Diátaxis: tutorials, how-to guides, reference, and explanation | Active |
 | [`sdlc-curriculum`](https://github.com/dialectic-playground/sdlc-curriculum) | Specification-driven curriculum: specs, black-box tests, and templates for eleven cross-platform CLI projects | Active |
 | [`repo-template`](https://github.com/dialectic-playground/repo-template) | Template for new repositories: standard files, CI, Dependabot, and conventions | Active |
-| `py` | Python implementation of the curriculum | Planned |
-| `rs` | Rust implementation of the curriculum | Planned |
-| `go` | Go implementation of the curriculum | Planned |
-| *More languages* | *C, C#, Java, JavaScript, TypeScript, PHP, Ruby, …* | *Roadmap* |
+| [`c`](https://github.com/dialectic-playground/c) | C implementation of the curriculum | Active |
+| [`cs`](https://github.com/dialectic-playground/cs) | C# implementation of the curriculum | Active |
+| [`cpp`](https://github.com/dialectic-playground/cpp) | C++ implementation of the curriculum | Active |
+| [`go`](https://github.com/dialectic-playground/go) | Go implementation of the curriculum | Active |
+| [`hs`](https://github.com/dialectic-playground/hs) | Haskell implementation of the curriculum | Active |
+| [`java`](https://github.com/dialectic-playground/java) | Java implementation of the curriculum | Active |
+| [`js`](https://github.com/dialectic-playground/js) | JavaScript implementation of the curriculum | Active |
+| [`jl`](https://github.com/dialectic-playground/jl) | Julia implementation of the curriculum | Active |
+| [`objc`](https://github.com/dialectic-playground/objc) | Objective-C implementation of the curriculum | Active |
+| [`pl`](https://github.com/dialectic-playground/pl) | Perl implementation of the curriculum | Active |
+| [`php`](https://github.com/dialectic-playground/php) | PHP implementation of the curriculum | Active |
+| [`py`](https://github.com/dialectic-playground/py) | Python implementation of the curriculum | Active |
+| [`rb`](https://github.com/dialectic-playground/rb) | Ruby implementation of the curriculum | Active |
+| [`rs`](https://github.com/dialectic-playground/rs) | Rust implementation of the curriculum | Active |
+| [`ts`](https://github.com/dialectic-playground/ts) | TypeScript implementation of the curriculum | Active |
+| [`vb`](https://github.com/dialectic-playground/vb) | Visual Basic implementation of the curriculum | Active |
 
-**Status:** *Active* repositories exist and are maintained. *Planned* repositories are committed to but not yet created. *Roadmap* items are candidates.
+**Status:** *Active* repositories exist and are maintained. *Planned* repositories are committed to but not yet created. *Roadmap* items are candidates. Language repositories list their implemented projects in their README.
 
 ## 🚀 Vision
 By building equivalent structures and ideas across different ecosystems, this organization serves as a sandbox for evaluating syntax paradigms, tooling behaviors, and design patterns side-by-side.

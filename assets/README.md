@@ -10,6 +10,22 @@ variant of the same identity.
 | [`dot-github`](dot-github/) (`.github`) | <img src="dot-github/dist/icon.svg" width="64" alt=""> | <img src="dot-github/dist/logo.svg" height="48" alt=""> | <img src="dot-github/dist/social-preview.png" width="200" alt=""> |
 | [`docs`](docs/) | <img src="docs/dist/icon.svg" width="64" alt=""> | <img src="docs/dist/logo.svg" height="48" alt=""> | <img src="docs/dist/social-preview.png" width="200" alt=""> |
 | [`sdlc-curriculum`](sdlc-curriculum/) | <img src="sdlc-curriculum/dist/icon.svg" width="64" alt=""> | <img src="sdlc-curriculum/dist/logo.svg" height="48" alt=""> | <img src="sdlc-curriculum/dist/social-preview.png" width="200" alt=""> |
+| [`c`](c/) (C) | <img src="c/dist/icon.svg" width="64" alt=""> | <img src="c/dist/logo.svg" height="48" alt=""> | <img src="c/dist/social-preview.png" width="200" alt=""> |
+| [`cs`](cs/) (C#) | <img src="cs/dist/icon.svg" width="64" alt=""> | <img src="cs/dist/logo.svg" height="48" alt=""> | <img src="cs/dist/social-preview.png" width="200" alt=""> |
+| [`cpp`](cpp/) (C++) | <img src="cpp/dist/icon.svg" width="64" alt=""> | <img src="cpp/dist/logo.svg" height="48" alt=""> | <img src="cpp/dist/social-preview.png" width="200" alt=""> |
+| [`go`](go/) (Go) | <img src="go/dist/icon.svg" width="64" alt=""> | <img src="go/dist/logo.svg" height="48" alt=""> | <img src="go/dist/social-preview.png" width="200" alt=""> |
+| [`hs`](hs/) (Haskell) | <img src="hs/dist/icon.svg" width="64" alt=""> | <img src="hs/dist/logo.svg" height="48" alt=""> | <img src="hs/dist/social-preview.png" width="200" alt=""> |
+| [`java`](java/) (Java) | <img src="java/dist/icon.svg" width="64" alt=""> | <img src="java/dist/logo.svg" height="48" alt=""> | <img src="java/dist/social-preview.png" width="200" alt=""> |
+| [`js`](js/) (JavaScript) | <img src="js/dist/icon.svg" width="64" alt=""> | <img src="js/dist/logo.svg" height="48" alt=""> | <img src="js/dist/social-preview.png" width="200" alt=""> |
+| [`jl`](jl/) (Julia) | <img src="jl/dist/icon.svg" width="64" alt=""> | <img src="jl/dist/logo.svg" height="48" alt=""> | <img src="jl/dist/social-preview.png" width="200" alt=""> |
+| [`objc`](objc/) (Objective-C) | <img src="objc/dist/icon.svg" width="64" alt=""> | <img src="objc/dist/logo.svg" height="48" alt=""> | <img src="objc/dist/social-preview.png" width="200" alt=""> |
+| [`pl`](pl/) (Perl) | <img src="pl/dist/icon.svg" width="64" alt=""> | <img src="pl/dist/logo.svg" height="48" alt=""> | <img src="pl/dist/social-preview.png" width="200" alt=""> |
+| [`php`](php/) (PHP) | <img src="php/dist/icon.svg" width="64" alt=""> | <img src="php/dist/logo.svg" height="48" alt=""> | <img src="php/dist/social-preview.png" width="200" alt=""> |
+| [`py`](py/) (Python) | <img src="py/dist/icon.svg" width="64" alt=""> | <img src="py/dist/logo.svg" height="48" alt=""> | <img src="py/dist/social-preview.png" width="200" alt=""> |
+| [`rb`](rb/) (Ruby) | <img src="rb/dist/icon.svg" width="64" alt=""> | <img src="rb/dist/logo.svg" height="48" alt=""> | <img src="rb/dist/social-preview.png" width="200" alt=""> |
+| [`rs`](rs/) (Rust) | <img src="rs/dist/icon.svg" width="64" alt=""> | <img src="rs/dist/logo.svg" height="48" alt=""> | <img src="rs/dist/social-preview.png" width="200" alt=""> |
+| [`ts`](ts/) (TypeScript) | <img src="ts/dist/icon.svg" width="64" alt=""> | <img src="ts/dist/logo.svg" height="48" alt=""> | <img src="ts/dist/social-preview.png" width="200" alt=""> |
+| [`vb`](vb/) (Visual Basic) | <img src="vb/dist/icon.svg" width="64" alt=""> | <img src="vb/dist/logo.svg" height="48" alt=""> | <img src="vb/dist/social-preview.png" width="200" alt=""> |
 
 ---
 
@@ -63,9 +79,11 @@ committed (`make verify-assets`).
 
 ### Palette registry
 
-Accent colors already in use, plus suggestions for planned repositories. Language accents come
-from each language's recognizable brand color, adjusted where needed so they show up on the dark
-background. Language glyphs are short **text** (not official logos), which avoids trademark and
+Accent colors in use. Language accents start from the language's
+[GitHub Linguist](https://github.com/github-linguist/linguist/blob/main/lib/linguist/languages.yml)
+color (the dot GitHub shows next to a language) and are adjusted only where needed for contrast
+on the dark background, or to stay distinct from the thesis and antithesis rings and other
+sets. Each adjustment is noted in the table. Language glyphs are short **text** (not official logos), which avoids trademark and
 usage-policy issues. Pick an accent that is clearly different from the thesis and antithesis
 ring colors and from the other entries here.
 
@@ -75,16 +93,22 @@ ring colors and from the other entries here.
 | `dot-github` | `.github` | `#4ADE80` green | `#052E16` | `.gh` | Active |
 | `docs` | `docs` | `#E2E8F0` paper | `#1E1B4B` | `book` file | Active |
 | `sdlc-curriculum` | `sdlc-curriculum` | `#2DD4BF` teal | `#042F2E` | `cycle` file | Active |
-| `py` | `py` | `#4B8BBE` | `#FFD43B` | `py` | Planned |
-| `rs` | `rs` | `#DEA584` | `#1E1B4B` | `rs` | Planned |
-| `go` | `go` | `#00ADD8` | `#FFFFFF` | `go` | Planned |
-| `c` | `c` | `#A8B9CC` | `#1E1B4B` | `c` | Planned |
-| `cs` | `cs` | `#9B4F96` | `#FFFFFF` | `c#` | Planned |
-| `java` | `java` | `#F89820` | `#1E1B4B` | `jv` | Planned |
-| `js` | `js` | `#F7DF1E` | `#1E1B4B` | `js` | Planned |
-| `ts` | `ts` | `#3178C6` | `#FFFFFF` | `ts` | Planned |
-| `php` | `php` | `#8892BF` | `#FFFFFF` | `php` | Planned |
-| `rb` | `rb` | `#CC342D` | `#FFFFFF` | `rb` | Planned |
+| `c` | `c` | `#A3A3A3` (Linguist `#555555`; lightened for contrast on the dark background) | `#1E1B4B` | `c` | Active |
+| `cs` | `cs` | `#178600` (Linguist `#178600`) | `#FFFFFF` | `c#` | Active |
+| `cpp` | `cpp` | `#D6336C` (Linguist `#F34B7D`; darkened to stay distinct from the rose antithesis ring) | `#FFFFFF` | `c++` | Active |
+| `go` | `go` | `#0087A8` (Linguist `#00ADD8`; darkened to stay distinct from the sky thesis ring) | `#FFFFFF` | `go` | Active |
+| `hs` | `hs` | `#7562A8` (Linguist `#5E5086`; lightened for contrast on the dark background) | `#FFFFFF` | `hs` | Active |
+| `java` | `java` | `#B07219` (Linguist `#B07219`) | `#FFFFFF` | `jv` | Active |
+| `js` | `js` | `#F1E05A` (Linguist `#F1E05A`) | `#1E1B4B` | `js` | Active |
+| `jl` | `jl` | `#389826` (Linguist `#A270BA`; replaced by Julia's logo green: the Linguist purple collides with Visual Basic and the organization violet) | `#FFFFFF` | `jl` | Active |
+| `objc` | `objc` | `#438EFF` (Linguist `#438EFF`) | `#0B1120` | `m` | Active |
+| `pl` | `pl` | `#0298C3` (Linguist `#0298C3`) | `#FFFFFF` | `pl` | Active |
+| `php` | `php` | `#777BB4` (Linguist `#4F5D95`; lightened (PHP's own brand color) for contrast on the dark background) | `#FFFFFF` | `php` | Active |
+| `py` | `py` | `#3572A5` (Linguist `#3572A5`) | `#FFD43B` | `py` | Active |
+| `rb` | `rb` | `#CC342D` (Linguist `#701516`; lightened (Ruby's own brand red) for contrast on the dark background) | `#FFFFFF` | `rb` | Active |
+| `rs` | `rs` | `#DEA584` (Linguist `#DEA584`) | `#1E1B4B` | `rs` | Active |
+| `ts` | `ts` | `#3178C6` (Linguist `#3178C6`) | `#FFFFFF` | `ts` | Active |
+| `vb` | `vb` | `#945DB7` (Linguist `#945DB7`) | `#FFFFFF` | `vb` | Active |
 
 When you create a set, change its row to *Active* so this table remains the record of which accents
 are taken.
