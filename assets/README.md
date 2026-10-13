@@ -70,22 +70,22 @@ ring colors and from the other entries here.
 
 | Slug | Repo | Accent | Glyph color | Glyph | Status |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| `dialectic-playground` | *(org)* | `#A78BFA` violet (sky + rose = synthesis) | `#FFFFFF` | `spark` file | ✅ created |
-| `dot-github` | `.github` | `#4ADE80` green | `#052E16` | `.gh` | ✅ created |
-| `docs` | `docs` | `#E2E8F0` paper | `#1E1B4B` | `book` file | ✅ created |
-| `sdlc-curriculum` | `sdlc-curriculum` | `#2DD4BF` teal | `#042F2E` | `cycle` file | ✅ created |
-| `py` | `py` | `#4B8BBE` | `#FFD43B` | `py` | suggested |
-| `rs` | `rs` | `#DEA584` | `#1E1B4B` | `rs` | suggested |
-| `go` | `go` | `#00ADD8` | `#FFFFFF` | `go` | suggested |
-| `c` | `c` | `#A8B9CC` | `#1E1B4B` | `c` | suggested |
-| `cs` | `cs` | `#9B4F96` | `#FFFFFF` | `c#` | suggested |
-| `java` | `java` | `#F89820` | `#1E1B4B` | `jv` | suggested |
-| `js` | `js` | `#F7DF1E` | `#1E1B4B` | `js` | suggested |
-| `ts` | `ts` | `#3178C6` | `#FFFFFF` | `ts` | suggested |
-| `php` | `php` | `#8892BF` | `#FFFFFF` | `php` | suggested |
-| `rb` | `rb` | `#CC342D` | `#FFFFFF` | `rb` | suggested |
+| `dialectic-playground` | *(org)* | `#A78BFA` violet (sky + rose = synthesis) | `#FFFFFF` | `spark` file | Active |
+| `dot-github` | `.github` | `#4ADE80` green | `#052E16` | `.gh` | Active |
+| `docs` | `docs` | `#E2E8F0` paper | `#1E1B4B` | `book` file | Active |
+| `sdlc-curriculum` | `sdlc-curriculum` | `#2DD4BF` teal | `#042F2E` | `cycle` file | Active |
+| `py` | `py` | `#4B8BBE` | `#FFD43B` | `py` | Planned |
+| `rs` | `rs` | `#DEA584` | `#1E1B4B` | `rs` | Planned |
+| `go` | `go` | `#00ADD8` | `#FFFFFF` | `go` | Planned |
+| `c` | `c` | `#A8B9CC` | `#1E1B4B` | `c` | Planned |
+| `cs` | `cs` | `#9B4F96` | `#FFFFFF` | `c#` | Planned |
+| `java` | `java` | `#F89820` | `#1E1B4B` | `jv` | Planned |
+| `js` | `js` | `#F7DF1E` | `#1E1B4B` | `js` | Planned |
+| `ts` | `ts` | `#3178C6` | `#FFFFFF` | `ts` | Planned |
+| `php` | `php` | `#8892BF` | `#FFFFFF` | `php` | Planned |
+| `rb` | `rb` | `#CC342D` | `#FFFFFF` | `rb` | Planned |
 
-When you create a set, change its row to ✅ so this table remains the record of which accents
+When you create a set, change its row to *Active* so this table remains the record of which accents
 are taken.
 
 ---
@@ -146,7 +146,7 @@ templates/ + <slug>/asset.env ──scaffold-assets.sh──▶ <slug>/*.svg ─
 | `dist/social-preview.png` | GitHub **repository social preview**. Upload under *Settings → General → Social preview*. GitHub has no API for this. |
 | `dist/logo.svg` / `logo-dark.svg` | README headers (see snippet below) |
 | `dist/logo.png` / `logo-dark.png` | Places that can't use SVG |
-| `dist/favicon.ico`, `favicon-*.png`, `apple-touch-icon.png` | Documentation sites (e.g. a future GitHub Pages / MkDocs site for `docs`) |
+| `dist/favicon.ico`, `favicon-*.png`, `apple-touch-icon.png` | Documentation sites. The [docs site](https://dialectic-playground.github.io/docs/) uses the `docs` set: copy `icon.svg`, `favicon.ico`, `apple-touch-icon.png`, `logo.svg`, and `logo-dark.svg` into the docs repository's `docs/assets/brand/` whenever they change. The site deliberately uses the organization violet `#A78BFA`, not the `docs` set's paper accent, as its theme accent, so links and highlights stay readable. |
 | `dist/icon-256.png`, `dist/icon.svg` | General-purpose icons: badges, slides, package registries |
 
 **Theme-aware README header.** Use this in a repository's `README.md`. It works on github.com
@@ -190,8 +190,13 @@ tools/scaffold-assets.sh rs
 # 4. Render dist/
 tools/generate-assets.sh rs
 
-# 5. Review the PNGs in assets/rs/dist/, update the palette registry row to ✅, then commit
+# 5. Review the PNGs in assets/rs/dist/, change the palette registry row to Active, add the
+#    set to the preview table at the top of this file, then commit
 ```
+
+Creating an asset set is one step of
+[Add a repository](https://dialectic-playground.github.io/docs/how-to/add-a-repository/), the
+full checklist for bringing a repository online.
 
 ### Making changes
 
