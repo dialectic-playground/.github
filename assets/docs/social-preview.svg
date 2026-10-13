@@ -47,8 +47,8 @@
   <text x="600" y="210" font-family="'JetBrains Mono', 'DejaVu Sans Mono', Menlo, Consolas, monospace" font-size="32" fill="#94A3B8">dialectic-playground /</text>
   <text x="594" y="330" font-family="'JetBrains Mono', 'DejaVu Sans Mono', Menlo, Consolas, monospace" font-weight="700" font-size="120" fill="#F8FAFC">docs</text>
   <g font-family="Inter, 'Segoe UI', 'DejaVu Sans', 'Helvetica Neue', Arial, sans-serif" font-size="28" fill="#CBD5E1">
-    <text x="600" y="420">Shared guides, specs &amp; cross-cutting notes</text>
-    <text x="600" y="462">for every language implementation.</text>
+    <text x="600" y="420">Tutorials, how-to guides, reference &amp;</text>
+    <text x="600" y="462">explanation, organized with Diátaxis.</text>
   </g>
   <g font-family="'JetBrains Mono', 'DejaVu Sans Mono', Menlo, Consolas, monospace" font-size="24">
     <circle cx="608" cy="560" r="7" fill="#38BDF8"/><text x="624" y="568" fill="#94A3B8">thesis</text>
