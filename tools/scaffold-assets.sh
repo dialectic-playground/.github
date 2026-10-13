@@ -125,7 +125,7 @@ main() {
     case $1 in
       -f|--force) force=1 ;;
       -a|--all) all=1 ;;
-      -h|--help) usage ;;
+      -h|--help) usage 0 ;;
       -*) die "unknown option: $1" ;;
       *) slugs+=("${1%/}") ;;
     esac
