@@ -1,0 +1,54 @@
+name: Bug report
+description: Something behaves differently from its specification or documentation.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please search existing issues first. Security problems must be
+        reported privately (see SECURITY.md), never here.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is wrong, in one or two sentences?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Exact commands, inputs, or pages involved.
+      placeholder: |
+        1. Run `…`
+        2. …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen? Link the specification, SRS requirement, or doc page if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happens instead? Paste output as text, not screenshots.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS and version, language toolchain and version, commit or release.
+      placeholder: "e.g. Windows 11, Python 3.12.4, main @ a1b2c3d"
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this organization's Code of Conduct.
+          required: true
