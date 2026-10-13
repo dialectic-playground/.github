@@ -1,0 +1,29 @@
+name: Documentation issue
+description: Something is missing, unclear, outdated, or wrong in the documentation.
+labels: [documentation]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Page or file
+      description: URL of the docs page, or the path of the file.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of problem
+      options:
+        - Incorrect or outdated
+        - Unclear
+        - Missing
+        - Broken link or formatting
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What is wrong, and what should it say instead?
+    validations:
+      required: true

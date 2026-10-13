@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question or discuss an idea
+    url: https://github.com/orgs/dialectic-playground/discussions
+    about: Questions and open-ended ideas belong in the organization discussions.
+  - name: Report a security vulnerability
+    url: https://github.com/dialectic-playground/.github/blob/main/SECURITY.md
+    about: Never report vulnerabilities in public issues; use private vulnerability reporting.
+  - name: Read the documentation
+    url: https://dialectic-playground.github.io/docs/
+    about: Tutorials, how-to guides, reference, and explanation.
