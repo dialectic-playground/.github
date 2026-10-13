@@ -9,6 +9,7 @@ variant of the same identity.
 | [`dialectic-playground`](dialectic-playground/) (org) | <img src="dialectic-playground/dist/icon.svg" width="64" alt=""> | <img src="dialectic-playground/dist/logo.svg" height="48" alt=""> | <img src="dialectic-playground/dist/social-preview.png" width="200" alt=""> |
 | [`dot-github`](dot-github/) (`.github`) | <img src="dot-github/dist/icon.svg" width="64" alt=""> | <img src="dot-github/dist/logo.svg" height="48" alt=""> | <img src="dot-github/dist/social-preview.png" width="200" alt=""> |
 | [`docs`](docs/) | <img src="docs/dist/icon.svg" width="64" alt=""> | <img src="docs/dist/logo.svg" height="48" alt=""> | <img src="docs/dist/social-preview.png" width="200" alt=""> |
+| [`sdlc-curriculum`](sdlc-curriculum/) | <img src="sdlc-curriculum/dist/icon.svg" width="64" alt=""> | <img src="sdlc-curriculum/dist/logo.svg" height="48" alt=""> | <img src="sdlc-curriculum/dist/social-preview.png" width="200" alt=""> |
 
 ---
 
@@ -72,6 +73,7 @@ ring colors and from the other entries here.
 | `dialectic-playground` | *(org)* | `#A78BFA` violet (sky + rose = synthesis) | `#FFFFFF` | `spark` file | ✅ created |
 | `dot-github` | `.github` | `#4ADE80` green | `#052E16` | `.gh` | ✅ created |
 | `docs` | `docs` | `#E2E8F0` paper | `#1E1B4B` | `book` file | ✅ created |
+| `sdlc-curriculum` | `sdlc-curriculum` | `#2DD4BF` teal | `#042F2E` | `cycle` file | ✅ created |
 | `py` | `py` | `#4B8BBE` | `#FFD43B` | `py` | suggested |
 | `rs` | `rs` | `#DEA584` | `#1E1B4B` | `rs` | suggested |
 | `go` | `go` | `#00ADD8` | `#FFFFFF` | `go` | suggested |
@@ -103,7 +105,7 @@ assets/
 │   │   ├── glyph-text.svg.tmpl  ← text glyph renderer (auto-sized for 1–3 characters)
 │   │   ├── logo-text.{org,repo}.svg.tmpl
 │   │   └── social-text.{org,repo}.svg.tmpl
-│   └── glyphs/                  ← reusable shape glyphs (spark, book, …)
+│   └── glyphs/                  ← reusable shape glyphs (spark, book, cycle, …)
 └── <slug>/                      ← one asset set per repository
     ├── asset.env                ← this set's parameters
     ├── icon.svg                 ← SOURCE (scaffolded from templates; may be hand-tuned)
@@ -214,7 +216,7 @@ A glyph is an SVG *fragment*, not a complete document. It is pasted into the len
   substituted at scaffold time.
 - Keep it bold and simple. The same glyph has to read at 32×32 px.
 
-See `templates/glyphs/book.svg` and `templates/glyphs/spark.svg`.
+See `templates/glyphs/book.svg`, `templates/glyphs/cycle.svg`, and `templates/glyphs/spark.svg`.
 
 ### Constraints and gotchas
 

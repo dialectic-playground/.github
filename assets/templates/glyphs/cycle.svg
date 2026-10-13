@@ -1,0 +1,7 @@
+    <!-- cycle: two chasing arrows — the software development lifecycle (curriculum glyph) -->
+    <g fill="none" stroke="${GLYPH_COLOR}" stroke-width="9" stroke-linecap="round">
+      <path d="M -30.1,-10.9 A 32 32 0 0 1 28.2,-15.1"/>
+      <path d="M 30.1,10.9 A 32 32 0 0 1 -28.2,15.1"/>
+    </g>
+    <path d="M 21.6,-7.8 L 38.6,-14.0 L 34.2,0.4 Z" fill="${GLYPH_COLOR}" stroke="${GLYPH_COLOR}" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M -21.6,7.8 L -38.6,14.0 L -34.2,-0.4 Z" fill="${GLYPH_COLOR}" stroke="${GLYPH_COLOR}" stroke-width="3" stroke-linejoin="round"/>
