@@ -2,4 +2,5 @@ repository:
   name: sdlc-curriculum
   description: "Specification-driven curriculum: specs, black-box tests, and templates for eleven cross-platform CLI projects."
   homepage: https://dialectic-playground.github.io/docs/reference/curriculum/
-  topics: [dialectic-playground, curriculum, specification, sdlc, cli, cross-platform]
+  topics:
+    [dialectic-playground, curriculum, specification, sdlc, cli, cross-platform]

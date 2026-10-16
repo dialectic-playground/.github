@@ -40,9 +40,10 @@ check-assets:
 	@status=0; \
 	for set in assets/*/; do \
 		[ "$$set" = assets/templates/ ] && continue; \
-		for file in apple-touch-icon.png favicon-16x16.png favicon-32x32.png favicon.ico \
-		            icon-256.png icon-512.png icon.svg logo-dark.png logo-dark.svg logo.png \
-		            logo.svg social-preview.png social-preview.svg; do \
+		for file in \
+			apple-touch-icon.png favicon-16x16.png favicon-32x32.png favicon.ico \
+			icon-256.png icon-512.png icon.svg logo-dark.png logo-dark.svg logo.png \
+			logo.svg social-preview.png social-preview.svg; do \
 			[ -f "$$set/dist/$$file" ] || { echo "missing $$set/dist/$$file (run make assets)"; status=1; }; \
 		done; \
 	done; exit $$status

@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+
+- [Contributing to Dialectic Playground](#contributing-to-dialectic-playground)
+  - [Workflow](#workflow)
+  - [Pull request titles: Conventional Commits](#pull-request-titles-conventional-commits)
+  - [Developer Certificate of Origin (DCO)](#developer-certificate-of-origin-dco)
+  - [Container-first development](#container-first-development)
+  - [Repository conventions](#repository-conventions)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Contributing to Dialectic Playground
 
 Thank you for contributing! This guide applies to every repository in the organization.
@@ -29,16 +43,16 @@ on `main`**. Write it as a [Conventional Commit](https://www.conventionalcommits
 <type>(<optional scope>): <imperative summary>
 ```
 
-| Type | Use for |
-| :-- | :-- |
-| `feat` | New functionality or content |
-| `fix` | A bug fix or correction |
-| `docs` | Documentation only |
-| `ci` | CI workflows and automation |
-| `build` | Build system or dependencies |
+| Type       | Use for                               |
+| :--------- | :------------------------------------ |
+| `feat`     | New functionality or content          |
+| `fix`      | A bug fix or correction               |
+| `docs`     | Documentation only                    |
+| `ci`       | CI workflows and automation           |
+| `build`    | Build system or dependencies          |
 | `refactor` | Restructuring without behavior change |
-| `test` | Tests or fixtures only |
-| `chore` | Maintenance that fits nothing above |
+| `test`     | Tests or fixtures only                |
+| `chore`    | Maintenance that fits nothing above   |
 
 Examples: `docs(how-to): add guide for running the black-box tests`,
 `fix(02-cat): correct -v notation for 0x7F in the SRS`.

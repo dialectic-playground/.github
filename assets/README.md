@@ -1,31 +1,51 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+
+- [Brand assets](#brand-assets)
+  - [The design](#the-design)
+    - [Fixed palette](#fixed-palette)
+    - [Typography](#typography)
+    - [Palette registry](#palette-registry)
+  - [Layout](#layout)
+    - [Sources and generated files](#sources-and-generated-files)
+    - [What each output is for](#what-each-output-is-for)
+  - [Adding assets for a new repository](#adding-assets-for-a-new-repository)
+    - [Making changes](#making-changes)
+    - [Writing a glyph file](#writing-a-glyph-file)
+    - [Constraints and gotchas](#constraints-and-gotchas)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Brand assets
 
 Icons, logos, and social previews for the **Dialectic Playground** organization and its
 repositories. Every image comes from one shared "core" design, so each repository gets its own
 variant of the same identity.
 
-| Set | Icon | Logo | Social preview |
-| :-- | :--: | :--: | :--: |
+| Set                                                   |                               Icon                               |                               Logo                                |                               Social preview                                |
+| :---------------------------------------------------- | :--------------------------------------------------------------: | :---------------------------------------------------------------: | :-------------------------------------------------------------------------: |
 | [`dialectic-playground`](dialectic-playground/) (org) | <img src="dialectic-playground/dist/icon.svg" width="64" alt=""> | <img src="dialectic-playground/dist/logo.svg" height="48" alt=""> | <img src="dialectic-playground/dist/social-preview.png" width="200" alt=""> |
-| [`dot-github`](dot-github/) (`.github`) | <img src="dot-github/dist/icon.svg" width="64" alt=""> | <img src="dot-github/dist/logo.svg" height="48" alt=""> | <img src="dot-github/dist/social-preview.png" width="200" alt=""> |
-| [`docs`](docs/) | <img src="docs/dist/icon.svg" width="64" alt=""> | <img src="docs/dist/logo.svg" height="48" alt=""> | <img src="docs/dist/social-preview.png" width="200" alt=""> |
-| [`sdlc-curriculum`](sdlc-curriculum/) | <img src="sdlc-curriculum/dist/icon.svg" width="64" alt=""> | <img src="sdlc-curriculum/dist/logo.svg" height="48" alt=""> | <img src="sdlc-curriculum/dist/social-preview.png" width="200" alt=""> |
-| [`c`](c/) (C) | <img src="c/dist/icon.svg" width="64" alt=""> | <img src="c/dist/logo.svg" height="48" alt=""> | <img src="c/dist/social-preview.png" width="200" alt=""> |
-| [`cs`](cs/) (C#) | <img src="cs/dist/icon.svg" width="64" alt=""> | <img src="cs/dist/logo.svg" height="48" alt=""> | <img src="cs/dist/social-preview.png" width="200" alt=""> |
-| [`cpp`](cpp/) (C++) | <img src="cpp/dist/icon.svg" width="64" alt=""> | <img src="cpp/dist/logo.svg" height="48" alt=""> | <img src="cpp/dist/social-preview.png" width="200" alt=""> |
-| [`go`](go/) (Go) | <img src="go/dist/icon.svg" width="64" alt=""> | <img src="go/dist/logo.svg" height="48" alt=""> | <img src="go/dist/social-preview.png" width="200" alt=""> |
-| [`hs`](hs/) (Haskell) | <img src="hs/dist/icon.svg" width="64" alt=""> | <img src="hs/dist/logo.svg" height="48" alt=""> | <img src="hs/dist/social-preview.png" width="200" alt=""> |
-| [`java`](java/) (Java) | <img src="java/dist/icon.svg" width="64" alt=""> | <img src="java/dist/logo.svg" height="48" alt=""> | <img src="java/dist/social-preview.png" width="200" alt=""> |
-| [`js`](js/) (JavaScript) | <img src="js/dist/icon.svg" width="64" alt=""> | <img src="js/dist/logo.svg" height="48" alt=""> | <img src="js/dist/social-preview.png" width="200" alt=""> |
-| [`jl`](jl/) (Julia) | <img src="jl/dist/icon.svg" width="64" alt=""> | <img src="jl/dist/logo.svg" height="48" alt=""> | <img src="jl/dist/social-preview.png" width="200" alt=""> |
-| [`objc`](objc/) (Objective-C) | <img src="objc/dist/icon.svg" width="64" alt=""> | <img src="objc/dist/logo.svg" height="48" alt=""> | <img src="objc/dist/social-preview.png" width="200" alt=""> |
-| [`pl`](pl/) (Perl) | <img src="pl/dist/icon.svg" width="64" alt=""> | <img src="pl/dist/logo.svg" height="48" alt=""> | <img src="pl/dist/social-preview.png" width="200" alt=""> |
-| [`php`](php/) (PHP) | <img src="php/dist/icon.svg" width="64" alt=""> | <img src="php/dist/logo.svg" height="48" alt=""> | <img src="php/dist/social-preview.png" width="200" alt=""> |
-| [`py`](py/) (Python) | <img src="py/dist/icon.svg" width="64" alt=""> | <img src="py/dist/logo.svg" height="48" alt=""> | <img src="py/dist/social-preview.png" width="200" alt=""> |
-| [`rb`](rb/) (Ruby) | <img src="rb/dist/icon.svg" width="64" alt=""> | <img src="rb/dist/logo.svg" height="48" alt=""> | <img src="rb/dist/social-preview.png" width="200" alt=""> |
-| [`rs`](rs/) (Rust) | <img src="rs/dist/icon.svg" width="64" alt=""> | <img src="rs/dist/logo.svg" height="48" alt=""> | <img src="rs/dist/social-preview.png" width="200" alt=""> |
-| [`ts`](ts/) (TypeScript) | <img src="ts/dist/icon.svg" width="64" alt=""> | <img src="ts/dist/logo.svg" height="48" alt=""> | <img src="ts/dist/social-preview.png" width="200" alt=""> |
-| [`vb`](vb/) (Visual Basic) | <img src="vb/dist/icon.svg" width="64" alt=""> | <img src="vb/dist/logo.svg" height="48" alt=""> | <img src="vb/dist/social-preview.png" width="200" alt=""> |
+| [`dot-github`](dot-github/) (`.github`)               |      <img src="dot-github/dist/icon.svg" width="64" alt="">      |      <img src="dot-github/dist/logo.svg" height="48" alt="">      |      <img src="dot-github/dist/social-preview.png" width="200" alt="">      |
+| [`docs`](docs/)                                       |         <img src="docs/dist/icon.svg" width="64" alt="">         |         <img src="docs/dist/logo.svg" height="48" alt="">         |         <img src="docs/dist/social-preview.png" width="200" alt="">         |
+| [`sdlc-curriculum`](sdlc-curriculum/)                 |   <img src="sdlc-curriculum/dist/icon.svg" width="64" alt="">    |   <img src="sdlc-curriculum/dist/logo.svg" height="48" alt="">    |   <img src="sdlc-curriculum/dist/social-preview.png" width="200" alt="">    |
+| [`c`](c/) (C)                                         |          <img src="c/dist/icon.svg" width="64" alt="">           |          <img src="c/dist/logo.svg" height="48" alt="">           |          <img src="c/dist/social-preview.png" width="200" alt="">           |
+| [`cs`](cs/) (C#)                                      |          <img src="cs/dist/icon.svg" width="64" alt="">          |          <img src="cs/dist/logo.svg" height="48" alt="">          |          <img src="cs/dist/social-preview.png" width="200" alt="">          |
+| [`cpp`](cpp/) (C++)                                   |         <img src="cpp/dist/icon.svg" width="64" alt="">          |         <img src="cpp/dist/logo.svg" height="48" alt="">          |         <img src="cpp/dist/social-preview.png" width="200" alt="">          |
+| [`go`](go/) (Go)                                      |          <img src="go/dist/icon.svg" width="64" alt="">          |          <img src="go/dist/logo.svg" height="48" alt="">          |          <img src="go/dist/social-preview.png" width="200" alt="">          |
+| [`hs`](hs/) (Haskell)                                 |          <img src="hs/dist/icon.svg" width="64" alt="">          |          <img src="hs/dist/logo.svg" height="48" alt="">          |          <img src="hs/dist/social-preview.png" width="200" alt="">          |
+| [`java`](java/) (Java)                                |         <img src="java/dist/icon.svg" width="64" alt="">         |         <img src="java/dist/logo.svg" height="48" alt="">         |         <img src="java/dist/social-preview.png" width="200" alt="">         |
+| [`js`](js/) (JavaScript)                              |          <img src="js/dist/icon.svg" width="64" alt="">          |          <img src="js/dist/logo.svg" height="48" alt="">          |          <img src="js/dist/social-preview.png" width="200" alt="">          |
+| [`jl`](jl/) (Julia)                                   |          <img src="jl/dist/icon.svg" width="64" alt="">          |          <img src="jl/dist/logo.svg" height="48" alt="">          |          <img src="jl/dist/social-preview.png" width="200" alt="">          |
+| [`objc`](objc/) (Objective-C)                         |         <img src="objc/dist/icon.svg" width="64" alt="">         |         <img src="objc/dist/logo.svg" height="48" alt="">         |         <img src="objc/dist/social-preview.png" width="200" alt="">         |
+| [`pl`](pl/) (Perl)                                    |          <img src="pl/dist/icon.svg" width="64" alt="">          |          <img src="pl/dist/logo.svg" height="48" alt="">          |          <img src="pl/dist/social-preview.png" width="200" alt="">          |
+| [`php`](php/) (PHP)                                   |         <img src="php/dist/icon.svg" width="64" alt="">          |         <img src="php/dist/logo.svg" height="48" alt="">          |         <img src="php/dist/social-preview.png" width="200" alt="">          |
+| [`py`](py/) (Python)                                  |          <img src="py/dist/icon.svg" width="64" alt="">          |          <img src="py/dist/logo.svg" height="48" alt="">          |          <img src="py/dist/social-preview.png" width="200" alt="">          |
+| [`rb`](rb/) (Ruby)                                    |          <img src="rb/dist/icon.svg" width="64" alt="">          |          <img src="rb/dist/logo.svg" height="48" alt="">          |          <img src="rb/dist/social-preview.png" width="200" alt="">          |
+| [`rs`](rs/) (Rust)                                    |          <img src="rs/dist/icon.svg" width="64" alt="">          |          <img src="rs/dist/logo.svg" height="48" alt="">          |          <img src="rs/dist/social-preview.png" width="200" alt="">          |
+| [`ts`](ts/) (TypeScript)                              |          <img src="ts/dist/icon.svg" width="64" alt="">          |          <img src="ts/dist/logo.svg" height="48" alt="">          |          <img src="ts/dist/social-preview.png" width="200" alt="">          |
+| [`vb`](vb/) (Visual Basic)                            |          <img src="vb/dist/icon.svg" width="64" alt="">          |          <img src="vb/dist/logo.svg" height="48" alt="">          |          <img src="vb/dist/social-preview.png" width="200" alt="">          |
 
 ---
 
@@ -33,12 +53,12 @@ variant of the same identity.
 
 The mark is a small picture of a dialectic:
 
-| Element | Meaning | Color |
-| :-- | :-- | :-- |
-| Left ring | **Thesis** | sky `#38BDF8` (fixed) |
-| Right ring | **Antithesis** | rose `#FB7185` (fixed) |
-| Overlapping lens | **Synthesis**: the space where ideas (and languages) meet | per-repo **accent** |
-| Glyph in the lens | What this particular repository is | per-repo glyph + glyph color |
+| Element           | Meaning                                                   | Color                        |
+| :---------------- | :-------------------------------------------------------- | :--------------------------- |
+| Left ring         | **Thesis**                                                | sky `#38BDF8` (fixed)        |
+| Right ring        | **Antithesis**                                            | rose `#FB7185` (fixed)       |
+| Overlapping lens  | **Synthesis**: the space where ideas (and languages) meet | per-repo **accent**          |
+| Glyph in the lens | What this particular repository is                        | per-repo glyph + glyph color |
 
 The rings interlock: rose passes over sky at the top crossing and sky passes over rose at the
 bottom. Neither side dominates.
@@ -46,7 +66,7 @@ bottom. Neither side dominates.
 **Every variant keeps the same rings, layout, background, and typography.** Only these change:
 
 1. `ACCENT`: the lens fill (plus the matching dot and gradient stop on the social preview)
-2. `GLYPH_TEXT` *or* `GLYPH_FILE`: the symbol in the lens
+2. `GLYPH_TEXT` _or_ `GLYPH_FILE`: the symbol in the lens
 3. `GLYPH_COLOR`: the glyph's fill
 4. The name and tagline text
 
@@ -55,13 +75,13 @@ recognizably part of one family.
 
 ### Fixed palette
 
-| Role | Value |
-| :-- | :-- |
-| Background gradient (icon, social) | `#1E1B4B` → `#0B1120` |
-| Thesis / antithesis rings | `#38BDF8` / `#FB7185` (16% fill inside each ring) |
-| Wordmark ink (light / dark) | `#0F172A` / `#F1F5F9` |
-| Wordmark muted (light / dark) | `#475569` / `#94A3B8` |
-| Social preview title / tagline / caption | `#F8FAFC` / `#CBD5E1` / `#94A3B8` |
+| Role                                     | Value                                             |
+| :--------------------------------------- | :------------------------------------------------ |
+| Background gradient (icon, social)       | `#1E1B4B` → `#0B1120`                             |
+| Thesis / antithesis rings                | `#38BDF8` / `#FB7185` (16% fill inside each ring) |
+| Wordmark ink (light / dark)              | `#0F172A` / `#F1F5F9`                             |
+| Wordmark muted (light / dark)            | `#475569` / `#94A3B8`                             |
+| Social preview title / tagline / caption | `#F8FAFC` / `#CBD5E1` / `#94A3B8`                 |
 
 ### Typography
 
@@ -87,37 +107,37 @@ sets. Each adjustment is noted in the table. Language glyphs are short **text** 
 usage-policy issues. Pick an accent that is clearly different from the thesis and antithesis
 ring colors and from the other entries here.
 
-| Slug | Repo | Accent | Glyph color | Glyph | Status |
-| :-- | :-- | :-- | :-- | :-- | :-- |
-| `dialectic-playground` | *(org)* | `#A78BFA` violet (sky + rose = synthesis) | `#FFFFFF` | `spark` file | Active |
-| `dot-github` | `.github` | `#4ADE80` green | `#052E16` | `.gh` | Active |
-| `docs` | `docs` | `#E2E8F0` paper | `#1E1B4B` | `book` file | Active |
-| `sdlc-curriculum` | `sdlc-curriculum` | `#2DD4BF` teal | `#042F2E` | `cycle` file | Active |
-| `c` | `c` | `#A3A3A3` (Linguist `#555555`; lightened for contrast on the dark background) | `#1E1B4B` | `c` | Active |
-| `cs` | `cs` | `#178600` (Linguist `#178600`) | `#FFFFFF` | `c#` | Active |
-| `cpp` | `cpp` | `#D6336C` (Linguist `#F34B7D`; darkened to stay distinct from the rose antithesis ring) | `#FFFFFF` | `c++` | Active |
-| `go` | `go` | `#0087A8` (Linguist `#00ADD8`; darkened to stay distinct from the sky thesis ring) | `#FFFFFF` | `go` | Active |
-| `hs` | `hs` | `#7562A8` (Linguist `#5E5086`; lightened for contrast on the dark background) | `#FFFFFF` | `hs` | Active |
-| `java` | `java` | `#B07219` (Linguist `#B07219`) | `#FFFFFF` | `jv` | Active |
-| `js` | `js` | `#F1E05A` (Linguist `#F1E05A`) | `#1E1B4B` | `js` | Active |
-| `jl` | `jl` | `#389826` (Linguist `#A270BA`; replaced by Julia's logo green: the Linguist purple collides with Visual Basic and the organization violet) | `#FFFFFF` | `jl` | Active |
-| `objc` | `objc` | `#438EFF` (Linguist `#438EFF`) | `#0B1120` | `m` | Active |
-| `pl` | `pl` | `#0298C3` (Linguist `#0298C3`) | `#FFFFFF` | `pl` | Active |
-| `php` | `php` | `#777BB4` (Linguist `#4F5D95`; lightened (PHP's own brand color) for contrast on the dark background) | `#FFFFFF` | `php` | Active |
-| `py` | `py` | `#3572A5` (Linguist `#3572A5`) | `#FFD43B` | `py` | Active |
-| `rb` | `rb` | `#CC342D` (Linguist `#701516`; lightened (Ruby's own brand red) for contrast on the dark background) | `#FFFFFF` | `rb` | Active |
-| `rs` | `rs` | `#DEA584` (Linguist `#DEA584`) | `#1E1B4B` | `rs` | Active |
-| `ts` | `ts` | `#3178C6` (Linguist `#3178C6`) | `#FFFFFF` | `ts` | Active |
-| `vb` | `vb` | `#945DB7` (Linguist `#945DB7`) | `#FFFFFF` | `vb` | Active |
+| Slug                   | Repo              | Accent                                                                                                                                     | Glyph color | Glyph        | Status |
+| :--------------------- | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------- | :---------- | :----------- | :----- |
+| `dialectic-playground` | _(org)_           | `#A78BFA` violet (sky + rose = synthesis)                                                                                                  | `#FFFFFF`   | `spark` file | Active |
+| `dot-github`           | `.github`         | `#4ADE80` green                                                                                                                            | `#052E16`   | `.gh`        | Active |
+| `docs`                 | `docs`            | `#E2E8F0` paper                                                                                                                            | `#1E1B4B`   | `book` file  | Active |
+| `sdlc-curriculum`      | `sdlc-curriculum` | `#2DD4BF` teal                                                                                                                             | `#042F2E`   | `cycle` file | Active |
+| `c`                    | `c`               | `#A3A3A3` (Linguist `#555555`; lightened for contrast on the dark background)                                                              | `#1E1B4B`   | `c`          | Active |
+| `cs`                   | `cs`              | `#178600` (Linguist `#178600`)                                                                                                             | `#FFFFFF`   | `c#`         | Active |
+| `cpp`                  | `cpp`             | `#D6336C` (Linguist `#F34B7D`; darkened to stay distinct from the rose antithesis ring)                                                    | `#FFFFFF`   | `c++`        | Active |
+| `go`                   | `go`              | `#0087A8` (Linguist `#00ADD8`; darkened to stay distinct from the sky thesis ring)                                                         | `#FFFFFF`   | `go`         | Active |
+| `hs`                   | `hs`              | `#7562A8` (Linguist `#5E5086`; lightened for contrast on the dark background)                                                              | `#FFFFFF`   | `hs`         | Active |
+| `java`                 | `java`            | `#B07219` (Linguist `#B07219`)                                                                                                             | `#FFFFFF`   | `jv`         | Active |
+| `js`                   | `js`              | `#F1E05A` (Linguist `#F1E05A`)                                                                                                             | `#1E1B4B`   | `js`         | Active |
+| `jl`                   | `jl`              | `#389826` (Linguist `#A270BA`; replaced by Julia's logo green: the Linguist purple collides with Visual Basic and the organization violet) | `#FFFFFF`   | `jl`         | Active |
+| `objc`                 | `objc`            | `#438EFF` (Linguist `#438EFF`)                                                                                                             | `#0B1120`   | `m`          | Active |
+| `pl`                   | `pl`              | `#0298C3` (Linguist `#0298C3`)                                                                                                             | `#FFFFFF`   | `pl`         | Active |
+| `php`                  | `php`             | `#777BB4` (Linguist `#4F5D95`; lightened (PHP's own brand color) for contrast on the dark background)                                      | `#FFFFFF`   | `php`        | Active |
+| `py`                   | `py`              | `#3572A5` (Linguist `#3572A5`)                                                                                                             | `#FFD43B`   | `py`         | Active |
+| `rb`                   | `rb`              | `#CC342D` (Linguist `#701516`; lightened (Ruby's own brand red) for contrast on the dark background)                                       | `#FFFFFF`   | `rb`         | Active |
+| `rs`                   | `rs`              | `#DEA584` (Linguist `#DEA584`)                                                                                                             | `#1E1B4B`   | `rs`         | Active |
+| `ts`                   | `ts`              | `#3178C6` (Linguist `#3178C6`)                                                                                                             | `#FFFFFF`   | `ts`         | Active |
+| `vb`                   | `vb`              | `#945DB7` (Linguist `#945DB7`)                                                                                                             | `#FFFFFF`   | `vb`         | Active |
 
-When you create a set, change its row to *Active* so this table remains the record of which accents
+When you create a set, change its row to _Active_ so this table remains the record of which accents
 are taken.
 
 ---
 
 ## Layout
 
-```
+```text
 assets/
 ├── README.md                    ← this file
 ├── templates/                   ← the shared "core" design (edit here to change every set)
@@ -151,7 +171,7 @@ The real repository name lives in `REPO=` inside `asset.env`.
 
 The pipeline has two stages, and each one has its own source of truth:
 
-```
+```text
 templates/ + <slug>/asset.env ──scaffold-assets.sh──▶ <slug>/*.svg ──generate-assets.sh──▶ <slug>/dist/*
 ```
 
@@ -165,32 +185,41 @@ templates/ + <slug>/asset.env ──scaffold-assets.sh──▶ <slug>/*.svg ─
 
 ### What each output is for
 
-| File | Use |
-| :-- | :-- |
-| `dist/icon-512.png` | GitHub **organization avatar** (org set). Upload under *Settings → Profile*. |
-| `dist/social-preview.png` | GitHub **repository social preview**. Upload under *Settings → General → Social preview*. GitHub has no API for this. |
-| `dist/logo.svg` / `logo-dark.svg` | README headers (see snippet below) |
-| `dist/logo.png` / `logo-dark.png` | Places that can't use SVG |
+| File                                                        | Use                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| :---------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dist/icon-512.png`                                         | GitHub **organization avatar** (org set). Upload under _Settings → Profile_.                                                                                                                                                                                                                                                                                                                                                       |
+| `dist/social-preview.png`                                   | GitHub **repository social preview**. Upload under _Settings → General → Social preview_. GitHub has no API for this.                                                                                                                                                                                                                                                                                                              |
+| `dist/logo.svg` / `logo-dark.svg`                           | README headers (see snippet below)                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `dist/logo.png` / `logo-dark.png`                           | Places that can't use SVG                                                                                                                                                                                                                                                                                                                                                                                                          |
 | `dist/favicon.ico`, `favicon-*.png`, `apple-touch-icon.png` | Documentation sites. The [docs site](https://dialectic-playground.github.io/docs/) uses the `docs` set: copy `icon.svg`, `favicon.ico`, `apple-touch-icon.png`, `logo.svg`, and `logo-dark.svg` into the docs repository's `docs/assets/brand/` whenever they change. The site deliberately uses the organization violet `#A78BFA`, not the `docs` set's paper accent, as its theme accent, so links and highlights stay readable. |
-| `dist/icon-256.png`, `dist/icon.svg` | General-purpose icons: badges, slides, package registries |
+| `dist/icon-256.png`, `dist/icon.svg`                        | General-purpose icons: badges, slides, package registries                                                                                                                                                                                                                                                                                                                                                                          |
 
 **Theme-aware README header.** Use this in a repository's `README.md`. It works on github.com
 because it references this repository through absolute URLs:
 
 ```html
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dialectic-playground/.github/main/assets/docs/dist/logo-dark.svg">
-  <img alt="dialectic playground / docs" src="https://raw.githubusercontent.com/dialectic-playground/.github/main/assets/docs/dist/logo.svg" height="96">
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="
+      https://raw.githubusercontent.com/dialectic-playground/.github/main/assets/docs/dist/logo-dark.svg
+    "
+  />
+  <img
+    alt="dialectic playground / docs"
+    src="https://raw.githubusercontent.com/dialectic-playground/.github/main/assets/docs/dist/logo.svg"
+    height="96"
+  />
 </picture>
 ```
 
 **Favicon tags** for a documentation site, after copying the `dist/` files into the site's root:
 
 ```html
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 ```
 
 ---
@@ -227,19 +256,19 @@ full checklist for bringing a repository online.
 
 ### Making changes
 
-| You want to… | Do this |
-| :-- | :-- |
-| Change something for **every** set (ring colors, layout, background) | Edit `templates/` → `make scaffold` → `make assets` |
-| Change one set's accent, glyph, or tagline | Edit `<slug>/asset.env` → `tools/dp-run tools/scaffold-assets.sh --force <slug>` → `make assets` |
-| Hand-tune one set's artwork | Edit `<slug>/*.svg` directly (in Inkscape or a text editor) → `make assets`. **Don't** run `make scaffold` or `scaffold-assets.sh --force` on that set afterwards, or your edits will be overwritten. |
-| Add a shape glyph instead of text | Add `templates/glyphs/<name>.svg` (see below) and set `GLYPH_FILE="<name>"` |
+| You want to…                                                         | Do this                                                                                                                                                                                               |
+| :------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Change something for **every** set (ring colors, layout, background) | Edit `templates/` → `make scaffold` → `make assets`                                                                                                                                                   |
+| Change one set's accent, glyph, or tagline                           | Edit `<slug>/asset.env` → `tools/dp-run tools/scaffold-assets.sh --force <slug>` → `make assets`                                                                                                      |
+| Hand-tune one set's artwork                                          | Edit `<slug>/*.svg` directly (in Inkscape or a text editor) → `make assets`. **Don't** run `make scaffold` or `scaffold-assets.sh --force` on that set afterwards, or your edits will be overwritten. |
+| Add a shape glyph instead of text                                    | Add `templates/glyphs/<name>.svg` (see below) and set `GLYPH_FILE="<name>"`                                                                                                                           |
 
 **Before re-scaffolding with `--force`, check `git diff`.** If a set's source SVGs have been
 hand-tuned, `--force` overwrites those edits.
 
 ### Writing a glyph file
 
-A glyph is an SVG *fragment*, not a complete document. It is pasted into the lens of
+A glyph is an SVG _fragment_, not a complete document. It is pasted into the lens of
 `partials/mark.svg.tmpl`.
 
 - Draw it centered on `(0, 0)` and keep it inside roughly **±50 units** horizontally and

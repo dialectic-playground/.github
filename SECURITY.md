@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+
+- [Security policy](#security-policy)
+  - [Supported versions](#supported-versions)
+  - [Reporting a vulnerability](#reporting-a-vulnerability)
+  - [Scope](#scope)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Security policy
 
 This policy applies to every repository in the
@@ -6,10 +18,10 @@ repository provides its own `SECURITY.md`.
 
 ## Supported versions
 
-| Repository type | Supported |
-| :-- | :-- |
-| Specification repositories (e.g. `sdlc-curriculum`) | The latest tagged release and `main` |
-| Implementation, documentation, and tooling repositories | `main` only |
+| Repository type                                         | Supported                            |
+| :------------------------------------------------------ | :----------------------------------- |
+| Specification repositories (e.g. `sdlc-curriculum`)     | The latest tagged release and `main` |
+| Implementation, documentation, and tooling repositories | `main` only                          |
 
 ## Reporting a vulnerability
 
