@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+
+- [.github](#github)
+  - [Layout](#layout)
+  - [Development](#development)
+  - [Contributing](#contributing)
+  - [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/dialectic-playground/.github/main/assets/dot-github/dist/logo-dark.svg">
@@ -14,18 +27,18 @@ Dialectic Playground.
 
 ## Layout
 
-| Path | Contents |
-| :--- | :--- |
-| [`profile/README.md`](profile/README.md) | The organization profile shown at [github.com/dialectic-playground](https://github.com/dialectic-playground) |
-| [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), [`CONTRIBUTING.md`](CONTRIBUTING.md), [`SECURITY.md`](SECURITY.md), [`SUPPORT.md`](SUPPORT.md) | Organization-wide community health defaults, used by every repository that has no file of its own |
-| [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/), [`.github/pull_request_template.md`](.github/pull_request_template.md) | Default issue forms and pull request template for every repository without its own |
-| [`assets/`](assets/) | Icons, logos, and social previews for the organization and each repository. See [`assets/README.md`](assets/README.md). |
-| [`tools/`](tools/) | Asset scaffolding and generation scripts, and the canonical copies of the shared container tooling (`dp-run`, `container.mk`). See [`tools/README.md`](tools/README.md). |
-| [`Makefile`](Makefile), [`Containerfile`](Containerfile), [`.devcontainer/`](.devcontainer/) | Container-first entry points: `make check`, `make assets`, and the toolchain image (Inkscape, ImageMagick, brand fonts) |
-| [`safe-settings/`](safe-settings/) | Repository settings as code: defaults, the branch ruleset, and each repository's description, homepage, and topics. See [`safe-settings/README.md`](safe-settings/README.md). |
-| [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | CI: `make check` in the container (plus reproducible-asset verification) and natively, DCO |
-| [`.github/workflows/image.yml`](.github/workflows/image.yml) | Publishes the toolchain image to `ghcr.io/dialectic-playground/asset-tools` |
-| [`.github/workflows/safe-settings.yml`](.github/workflows/safe-settings.yml) | Applies `safe-settings/` to every repository (on change, daily, and on demand) |
+| Path                                                                                                                                       | Contents                                                                                                                                                                      |
+| :----------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`profile/README.md`](profile/README.md)                                                                                                   | The organization profile shown at [github.com/dialectic-playground](https://github.com/dialectic-playground)                                                                  |
+| [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), [`CONTRIBUTING.md`](CONTRIBUTING.md), [`SECURITY.md`](SECURITY.md), [`SUPPORT.md`](SUPPORT.md) | Organization-wide community health defaults, used by every repository that has no file of its own                                                                             |
+| [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/), [`.github/pull_request_template.md`](.github/pull_request_template.md)               | Default issue forms and pull request template for every repository without its own                                                                                            |
+| [`assets/`](assets/)                                                                                                                       | Icons, logos, and social previews for the organization and each repository. See [`assets/README.md`](assets/README.md).                                                       |
+| [`tools/`](tools/)                                                                                                                         | Asset scaffolding and generation scripts, and the canonical copies of the shared container tooling (`dp-run`, `container.mk`). See [`tools/README.md`](tools/README.md).      |
+| [`Makefile`](Makefile), [`Containerfile`](Containerfile), [`.devcontainer/`](.devcontainer/)                                               | Container-first entry points: `make check`, `make assets`, and the toolchain image (Inkscape, ImageMagick, brand fonts)                                                       |
+| [`safe-settings/`](safe-settings/)                                                                                                         | Repository settings as code: defaults, the branch ruleset, and each repository's description, homepage, and topics. See [`safe-settings/README.md`](safe-settings/README.md). |
+| [`.github/workflows/ci.yml`](.github/workflows/ci.yml)                                                                                     | CI: `make check` in the container (plus reproducible-asset verification) and natively, DCO                                                                                    |
+| [`.github/workflows/image.yml`](.github/workflows/image.yml)                                                                               | Publishes the toolchain image to `ghcr.io/dialectic-playground/asset-tools`                                                                                                   |
+| [`.github/workflows/safe-settings.yml`](.github/workflows/safe-settings.yml)                                                               | Applies `safe-settings/` to every repository (on change, daily, and on demand)                                                                                                |
 
 ## Development
 
