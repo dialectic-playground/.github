@@ -10,6 +10,9 @@
 # Published as ghcr.io/dialectic-playground/asset-tools by .github/workflows/image.yml.
 FROM docker.io/library/debian:trixie-slim@sha256:a29215f6a35e51e22adffa17f89e9d2ef06214e64a2bad10d765c46aea49f11f
 
+# Fail a RUN step if any command in a pipeline fails (the checksum pipes below).
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 LABEL org.opencontainers.image.source="https://github.com/dialectic-playground/.github" \
       org.opencontainers.image.description="Brand-asset tooling for Dialectic Playground (Inkscape, ImageMagick, brand fonts)" \
       org.opencontainers.image.licenses="MIT"
@@ -20,6 +23,9 @@ ARG JETBRAINS_MONO_SHA256=6f6376c6ed2960ea8a963cd7387ec9d76e3f629125bc33d1fdcd7e
 ARG INTER_URL=https://github.com/rsms/inter/releases/download/v4.1/Inter-4.1.zip
 ARG INTER_SHA256=9883fdd4a49d4fb66bd8177ba6625ef9a64aa45899767dde3d36aa425756b11e
 
+# Debian keeps only the current version of each package, so apt versions cannot be pinned
+# reproducibly; the base image is pinned by digest instead.
+# hadolint ignore=DL3008
 RUN set -eux; \
     rm -f /etc/apt/sources.list.d/debian.sources; \
     printf '%s\n' \
